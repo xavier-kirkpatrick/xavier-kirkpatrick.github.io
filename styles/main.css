@@ -71,6 +71,12 @@ p {
     margin-top: 15px;
 }
 
+#box-view {
+     width: 80%;
+     height: 25%;
+}
+
+
 #return-button {
     text-align: center;
     font-size: 30px;
