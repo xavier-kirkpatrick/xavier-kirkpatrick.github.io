@@ -1,0 +1,48 @@
+.root {
+
+
+}
+
+body {
+
+    background-color: black;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+
+#h1 {
+
+    color: white;
+    font-size: 50px;
+    margin-top: 45px;
+    }
+
+#h2 {
+
+    color: white;
+    font-size: 19px;
+
+}
+
+#back-button {
+    margin-left: 800px;
+    margin-bottom: 50px;
+    margin-top: 5px;
+    font-size: 20px;
+
+}
+
+
+#title-line {
+    border-top: 1px solid white;
+    
+}
+
+
+
+#para-view {
+
+    color: whitesmoke;
+    margin-top: 80px;
+
+}
