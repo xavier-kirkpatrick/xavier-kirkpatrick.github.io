@@ -15,7 +15,7 @@ body {
     color: white;
     font-size: 50px;
     margin-top: 45px;
-    }
+}
 
 #h2 {
 
@@ -24,13 +24,22 @@ body {
 
 }
 
-#back-button {
-    margin-left: 800px;
-    margin-bottom: 50px;
-    margin-top: 5px;
-    font-size: 20px;
+@media all and (max-width: 500px) {
+    #back-button {
+        margin-left: 60%;
+        margin-top: 5px;
+        font-size: 20px;
+        }
+    }
 
-}
+@media all and (min-width: 500px) {
+    #back-button {
+        margin-left: 80%;
+        margin-top: 5px;
+        font-size: 20px;
+        }
+    }
+
 
 
 #title-line {
@@ -44,5 +53,6 @@ body {
 
     color: whitesmoke;
     margin-top: 80px;
+    margin-right: auto;
 
 }
