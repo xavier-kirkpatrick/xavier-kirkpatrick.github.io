@@ -56,3 +56,13 @@ body {
     margin-right: auto;
 
 }
+
+#dom-image {
+    max-width: 350px;
+    max-height: 300px;
+}
+
+#array-object {
+    width: 360px;
+    height: 120px;
+}

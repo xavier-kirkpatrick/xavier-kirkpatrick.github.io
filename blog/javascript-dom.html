@@ -3,11 +3,165 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="your-stylesheet-link-here.css" rel="stylesheet" type="text/css">
+        <link href="../styles/eq-and-js-fundamentals.css" rel="stylesheet" type="text/css">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300&display=swap" rel="stylesheet">
         
         <title>JS Fundamentals</title>
     </head>
+    
     <body>
+        <div>
+            <h1 id="h1">JS Fundamentals</h1>
+        </div>
+        <div> 
+            <H2 id="h2">Xavier Kirkpatrick</H2>
+        </div>
+    
+        <div>
+            <h2 id="h2">Hello. In this blog, I will talk about some of the 
+                <br>
+                basics concepts you'll find inside JavaScript, the
+                <br>
+                structure of the document object model or DOM, 
+                <br>
+                and how they relate. 
+                 
+            </h2>
+        </div>
+    
+        <div id="back-button">
+            <a href="https://xavier-kirkpatrick.github.io/index.html" style="color: aqua">Return to main</a>
+        </div>
         
+        <div id="title-line"></div> 
+        
+        <div>
+            <div id="para-view">
+                <p>
+                JavaScript, also known as the language of the web, is a programming language that is used to breathe life 
+                <br>
+                and interactivity into websites. Along with HTML and CSS, it makes up a trio of programming languages that you will 
+                <br>
+                see in pretty much all web pages you might visit.
+                </p>
+                
+                <p>
+                To help understand what JavaScript is, what it does, and its relationship to HTML and CSS, think of these three languages 
+                <br>
+                as what makes up a tree in nature. HTML is the structure, the solid wood inside that holds everything up, 
+                <br>
+                providing the building blocks and stability. CSS is the texture of the bark, the colour, and the shape of leaves and branches. 
+                <br>
+                Finally, JavaScript is like the magical way that nature affects the trees, morphing the colour of their leaves as seasons change, 
+                <br>
+                and moving the branches in the wind in real-time. In order for a tree to be what it is, all these aspects are needed and relied upon. 
+                <br>
+                This is much like a web page where these three languages need each other to create what you see on your screen 
+                <br>
+                in the form of useful, interactive sites.
+                </p>        
+                
+                <p>
+                Routines are another very normal part of life, a flow, if you will, consisting of things you do each day. 
+                <br>
+                This brings me to control flow within JavaScript. Blocks of code within a JavaScript application have to be executed at specific times, 
+                <br>
+                and control flow is essential for things to run smoothly. This is much like making sure you wake up in the morning at a specific 
+                <br>
+                time and then ensuring you depart for work at another given time to make sure you arrive at work when you’re meant to. 
+                <br>
+                Control flow is also governed by conditions, ensuring that only certain code runs when it's needed.
+                </p>
+                
+                <p>
+                Similar to these routines in everyday life, JavaScript also has loops that execute code when conditions within that loop are correct. 
+                <br>
+                Think of your morning routine as a loop, and as long as you aren’t calling in sick, and your condition is good, you’ll be carrying out that routine.    
+                </p>
+                
+                <p>
+                Here's an example of what a loop might look like.   
+                </p>
+            </div>
+        <img src="../images/loop-example.png" alt="loop image"> 
+
+            <Div id="para-view">
+                <p>
+                In this example, the loop will run as long as 'i', which starts off = to 0, is = to less than five. After that it stops looping.       
+                </p>
+
+                <p>
+                Another way that JavaScript works its magic is its ability to change or create things, like perhaps altering or creating text within 
+                <br>
+                the DOM without it being there in the first place. This is called DOM manipulation. But what is the DOM? Imagine the DOM again as a tree. 
+                <br>
+                It starts from the root and extends out into many branches. The root is the document itself and DOM continues to branch out into segments called nodes. 
+                <br>
+                These nodes could be elements of HTML and its tags with text that you see appear on a web page. The DOM also allows JavaScript to update 
+                <br>
+                and create an interactive environment on a site without having to refresh the page, like that link that changes shape and colour when your mouse hovers over it. 
+                </p>
+
+                <p>
+                A picture of a DOM strcture is below.    
+                </p>
+            </Div>
+
+        <img id="dom-image" src="https://www.freecodecamp.org/news/content/images/size/w1000/2022/06/DOM-tree.png" alt="dom structure">
+        
+            <div id="para-view">
+                <p>
+                What if we want to store information to be accessed? Two ways of structuring this information are in arrays and objects. 
+                <br>
+                Arrays store their information in numbered index, for instance, if there are five items in an array, these would be numbered 0 - 5. 
+                <br>
+                This information is then accessed using each item's number. Objects on the other hand aren’t indexed and contain information like lists 
+                <br>
+                with people's names and a corresponding valve like eye colour. You would then be able to retrieve the eye colour using the person's name as a key. 
+                </p>
+                <p>
+                Below is an array and an object for context.     
+                </p>
+                                
+            </div>
+
+        <img id="array-object" src="../images/array-object.png" alt="array-object">
+            
+            <div id="para-view">
+                <p>
+                The arrary is the list shown at the top. The items it contains are in a form called strings. 
+                <br>
+                The object is below, showing its different format of organising infomation.   
+                </p>
+                To help keep things in order and to make sure information or code is executed at the right time, JavaScript has Functions. 
+                <br>
+                Functions hold code, which would be for carrying out a specific task. To get a task going the function would be ‘called’, or triggered, 
+                <br>
+                at that moment executing the task in the form of code which it carries.
+                <p>
+                <p>
+                An example of a Function follows.   
+            </div>
+
+        <img src="../images/math-function.png" alt="function example">   
+
+            <div id="para-view">
+                <p>
+                In the function above, a multiplication equation is carried out. The function has parameters in brackets named a, and b. 
+                <br>
+                These parameters are given valves at the bottom as a = 2 and b = 2. The return statement then multiplies them together. 
+                <br>
+                Console log is a way of viewing the answer inside a console, which would show = 4. This is an example of how a function could store
+                <br>
+                a task within it, and when called, exicute that task and produce a needed result.  
+                </p>
+                
+                <p>
+                Functions can also call or trigger other functions from within them after it has been triggered and their task carried out. 
+                <br>
+                This is very useful for keeping things structured and part of control flow to make your code complete the tasks it was meant to do!! 
+                </p>
+            </div>
     </body>
 </html>
