@@ -1,82 +1,80 @@
 .root {
-
-
 }
 
 body {
-
-    background-color: black;
-    font-family: 'Nunito Sans', sans-serif;
+  background-color: black;
+  font-family: 'Nunito Sans', sans-serif;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 #h1 {
-
-    color: white;
-    font-size: 40px;
-    margin-top: 45px;
-    background-color: black;
-    border: solid; border-width: 1px ;display: inline;    
-    padding-left: 7px;
-    padding-right: 7px;
-
+  color: white;
+  font-size: 40px;
+  margin-top: 45px;
+  background-color: black;
+  border: solid;
+  border-width: 1px;
+  display: inline;
+  padding-left: 7px;
+  padding-right: 7px;
 }
 
-
 #h2 {
-
-    color: peru;
-    font-size: 19px;
-
+  color: peru;
+  font-size: 19px;
 }
 
 #blog-intro {
-    font-size: 19px;
-    color: white;
+  font-size: 19px;
+  color: white;
 }
 
 @media all and (max-width: 500px) {
-    #back-button {
-        margin-left: 60%;
-        margin-top: 5px;
-        font-size: 20px;
-        }
-    }
+  #back-button {
+    margin-left: 60%;
+    margin-top: 5px;
+    font-size: 20px;
+  }
+}
 
 @media all and (min-width: 500px) {
-    #back-button {
-        margin-left: 80%;
-        margin-top: 5px;
-        font-size: 20px;
-        }
-    }
-
-
+  #back-button {
+    margin-left: 80%;
+    margin-top: 5px;
+    font-size: 20px;
+  }
+}
 
 #top-spacer-line {
-    border-top: 1px solid white;
-    
+  border-top: 1px solid white;
 }
 
 #bottom-spacer-line {
-    border-top: 1px solid white;
-    margin-bottom: 40px;
-    
+  border-top: 1px solid white;
+  margin-bottom: 40px;
+}
+
+#para-spacer-line {
+  border-top: 1px dashed whitesmoke;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 #para-view {
-
-    color: whitesmoke;
-    margin-top: 50px;
-    margin-right: auto;
-
+  color: whitesmoke;
+  margin-top: 50px;
+  margin-right: auto;
 }
 
 #dom-image {
-    max-width: 350px;
-    max-height: 300px;
+  max-width: 350px;
+  max-height: 300px;
 }
 
 #array-object {
-    width: 360px;
-    height: 120px;
+  width: 360px;
+  height: 120px;
 }
