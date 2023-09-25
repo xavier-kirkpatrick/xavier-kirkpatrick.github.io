@@ -9,19 +9,29 @@ body {
     font-family: 'Nunito Sans', sans-serif;
 }
 
-
 #h1 {
 
     color: white;
-    font-size: 50px;
+    font-size: 40px;
     margin-top: 45px;
+    background-color: black;
+    border: solid; border-width: 1px ;display: inline;    
+    padding-left: 7px;
+    padding-right: 7px;
+
 }
+
 
 #h2 {
 
-    color: white;
+    color: peru;
     font-size: 19px;
 
+}
+
+#blog-intro {
+    font-size: 19px;
+    color: white;
 }
 
 @media all and (max-width: 500px) {
@@ -42,17 +52,21 @@ body {
 
 
 
-#title-line {
+#top-spacer-line {
     border-top: 1px solid white;
     
 }
 
-
+#bottom-spacer-line {
+    border-top: 1px solid white;
+    margin-bottom: 40px;
+    
+}
 
 #para-view {
 
     color: whitesmoke;
-    margin-top: 80px;
+    margin-top: 50px;
     margin-right: auto;
 
 }
