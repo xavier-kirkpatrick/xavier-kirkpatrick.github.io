@@ -4,7 +4,7 @@ function App() {
   const { data } = useFruits()
 
   return (
-    <div className="text-blue-500">
+    <div>
       <h1>Personal Portfolio</h1>
       {/* <ul>{data && data.map((fruit) => <li key={fruit}>{fruit}</li>)}</ul> */}
       <ul>{data?.map((fruit) => <li key={fruit}>{fruit}</li>)}</ul>
