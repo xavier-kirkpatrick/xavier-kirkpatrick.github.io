@@ -12,7 +12,7 @@
     "dev": "run-p dev:server dev:client dev:css",
     "dev:server": "tsx watch server/index.ts",
     "dev:client": "vite",
-    "dev:css": "tailwindcss -i src/styles/main.css -o public/main.css --watch",
+    "dev:css": "tailwindcss -i src/styles/main.css -o /main.css --watch",
     "knex": "knex --knexfile server/db/knexfile.js",
     "db-reset": "run-s db:*",
     "db:delete": "rm server/db/dev.sqlite3",
