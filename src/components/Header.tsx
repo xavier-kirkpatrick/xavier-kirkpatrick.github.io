@@ -1,17 +1,10 @@
 function Header() {
   return (
-    <>
-      <div className="ml-56 mt-11 bg-main-off-white">
-        <h1 className="bg-black text-white font-raleway p-4 hover:bg-blue-500">
-          Xavier
-        </h1>
-        <h1 className="font-raleway">Kirkpatrick</h1>
-      </div>
-      <div>
-        <hr />
-      </div>
-    </>
-  )
+    <div className=" w-80% ml-56 border-b border-black pt-10 font-raleway text-2xl">
+      <h1>Xavier</h1>
+      <h1>Kirkpatrick</h1>
+    </div>
+  );
 }
 
-export default Header
+export default Header;
