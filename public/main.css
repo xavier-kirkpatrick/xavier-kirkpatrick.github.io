@@ -553,32 +553,12 @@ video {
   margin-left: 14rem;
 }
 
-.mt-10{
-  margin-top: 2.5rem;
-}
-
 .flex{
   display: flex;
 }
 
 .min-h-screen{
   min-height: 100vh;
-}
-
-.w-1\/2{
-  width: 50%;
-}
-
-.w-40{
-  width: 10rem;
-}
-
-.w-3\/4{
-  width: 75%;
-}
-
-.w-96{
-  width: 24rem;
 }
 
 .w-80{
@@ -597,22 +577,18 @@ video {
   border-width: 1px;
 }
 
-.border-t{
-  border-top-width: 1px;
-}
-
 .border-b{
   border-bottom-width: 1px;
-}
-
-.border-gray-300{
-  --tw-border-opacity: 1;
-  border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
 .border-black{
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
+.border-gray-300{
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
 .bg-main-off-white{
@@ -641,32 +617,9 @@ video {
   font-family: Raleway, sans-serif;
 }
 
-.text-base{
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
-.text-lg{
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
-.text-3xl{
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
 .text-2xl{
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-.font-bold{
-  font-weight: 700;
-}
-
-.font-medium{
-  font-weight: 500;
 }
 
 .text-red-400{
@@ -676,6 +629,14 @@ video {
 
 .transition-colors{
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition{
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
