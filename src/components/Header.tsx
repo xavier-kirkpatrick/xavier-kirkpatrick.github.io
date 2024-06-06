@@ -29,8 +29,8 @@ function Header() {
         initial="hidden"
         animate="visible"
       >
-        {name.split("").map((character, index: number) => (
-          <motion.span variants={letter} key={index} className="inline-block">
+        {name.split("").map((character) => (
+          <motion.span variants={letter} key={character} className="inline-block">
             {character}
           </motion.span>
         ))}
