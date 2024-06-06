@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 /*
-! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.4 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -605,10 +605,6 @@ video {
 
 .min-h-screen{
   min-height: 100vh;
-}
-
-.w-80{
-  width: 20rem;
 }
 
 .items-center{
