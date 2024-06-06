@@ -5,7 +5,7 @@ const container = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.05,
+      staggerChildren: 0.1,
     },
   },
 };
@@ -45,7 +45,7 @@ function Header() {
         <h1>{animateXavKirk("Kirkpatrick")}</h1>
       </motion.div>
       <motion.div
-        className="ml-56 w-80 border-b border-black pt-2 font-raleway text-2xl"
+        className="ml-56 border-b border-black pt-2 font-raleway text-2xl"
         variants={headerLine}
         transition={{ duration: 1 }}
         initial="hidden"
