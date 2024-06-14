@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const container = {
   hidden: { opacity: 1 },
@@ -16,42 +17,89 @@ const letter = {
 };
 
 const headerLine = {
-  hidden: { opacity: 0, x: -500 },
-  visible: { opacity: 1, x: 0 },
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
 };
 
+// Header Component ----------------------------------------------------------------------
+
 function Header() {
+  const [dateTime, setDateTime] = useState(new Date());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDateTime(new Date());
+    }, 1000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
   const animateXavKirk = (name: string) => {
     return (
-      <motion.span
+      <motion.div
         className="inline-block overflow-hidden"
         variants={container}
         initial="hidden"
         animate="visible"
       >
         {name.split("").map((character) => (
-          <motion.span variants={letter} key={character} className="inline-block">
+          <motion.div
+            variants={letter}
+            key={character}
+            className="inline-block"
+          >
             {character}
-          </motion.span>
+          </motion.div>
         ))}
-      </motion.span>
+      </motion.div>
     );
   };
 
   return (
-    <div>
-      <motion.div className="ml-56 pt-12 font-raleway text-2xl">
-        <h1>{animateXavKirk("Xavier")}</h1>
-        <h1>{animateXavKirk("Kirkpatrick")}</h1>
-      </motion.div>
-      <motion.div
-        className="ml-56 border-b border-black pt-2 font-raleway text-2xl"
-        variants={headerLine}
-        transition={{ duration: 1 }}
-        initial="hidden"
-        animate="visible"
-      />
-    </div>
+    <>
+      <div className="mr-56 flex items-baseline justify-between">
+        <motion.div className="pt-12 font-raleway text-2xl">
+          <h1>{animateXavKirk("Xavier")}</h1>
+          <h1>{animateXavKirk("Kirkpatrick")}</h1>
+        </motion.div>
+
+        <div>
+          <motion.div
+            className="flex flex-col font-raleway"
+            variants={headerLine}
+            transition={{ duration: 1 }}
+            initial="hidden"
+            animate="visible"
+          >
+            <p className=" text-lg tracking-widest">
+              {dateTime
+                .toLocaleTimeString("en-US", {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                  second: "2-digit",
+                  hour12: false,
+                })
+                .replace(/:/g, ":")}
+            </p>
+
+            <p className="text-lg tracking-widest">
+              {dateTime.toLocaleDateString()}
+            </p>
+          </motion.div>
+        </div>
+      </div>
+
+      <div>
+        <motion.div
+          className="border-b border-black pt-2 font-raleway text-2xl"
+          variants={headerLine}
+          transition={{ duration: 4 }}
+          initial="hidden"
+          animate="visible"
+        />
+      </div>
+    </>
   );
 }
 
