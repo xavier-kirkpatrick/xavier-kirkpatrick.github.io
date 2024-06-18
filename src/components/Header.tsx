@@ -58,32 +58,34 @@ function Header() {
 
   return (
     <>
-      <div className="mr-56 flex items-baseline justify-between">
-        <motion.div className="pt-12 font-raleway text-2xl">
+      <div
+        id="container"
+        className="ml-56 mr-60 flex items-baseline justify-between pt-10"
+      >
+        <motion.div className="font-jost text-2xl tracking-wider">
           <h1>{animateXavKirk("Xavier")}</h1>
           <h1>{animateXavKirk("Kirkpatrick")}</h1>
         </motion.div>
 
         <div>
           <motion.div
-            className="flex flex-col font-raleway"
+            className="flex flex-col justify-evenly tracking-wider"
             variants={headerLine}
             transition={{ duration: 1 }}
             initial="hidden"
             animate="visible"
           >
-            <p className=" text-lg tracking-widest">
+            <p className="font-jost text-lg">Tāmaki Makaurau, NZ</p>
+
+            <p className="font-jost text-lg">
               {dateTime
                 .toLocaleTimeString("en-US", {
                   hour: "2-digit",
                   minute: "2-digit",
-                  second: "2-digit",
                   hour12: false,
                 })
                 .replace(/:/g, ":")}
-            </p>
-
-            <p className="text-lg tracking-widest">
+              {" - "}
               {dateTime.toLocaleDateString()}
             </p>
           </motion.div>
@@ -92,7 +94,7 @@ function Header() {
 
       <div>
         <motion.div
-          className="border-b border-black pt-2 font-raleway text-2xl"
+          className="ml-52 mr-10 border-b border-black pt-2 font-jost text-2xl"
           variants={headerLine}
           transition={{ duration: 4 }}
           initial="hidden"
