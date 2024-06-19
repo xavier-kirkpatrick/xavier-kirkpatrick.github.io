@@ -1,19 +1,14 @@
-import { useFruits } from '../hooks/useFruits.ts'
+import { RouterProvider, createRouter } from "@tanstack/react-router";
+import { Route as RootRoute } from "../routes/__root";
+import { routes } from "../routes";
+
+const router = createRouter({
+  routeTree: RootRoute.addChildren(routes),
+});
 
 function App() {
   // Register the router instance for type safety
-
-  const { data } = useFruits()
-
-  return (
-    <div className="bg-yellow-100 min-h-screen">
-      <h1 className="flex justify-center items-center p-0.5 border border-gray-300 hover:bg-green-200 hover:text-green-800 transition-colors">
-        Personal Portfolio
-      </h1>
-      {/* <ul>{data && data.map((fruit) => <li key={fruit}>{fruit}</li>)}</ul> */}
-      <ul>{data?.map((fruit) => <li key={fruit}>{fruit}</li>)}</ul>
-    </div>
-  )
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
