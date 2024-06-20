@@ -625,6 +625,11 @@ video {
   display: none;
 }
 
+.size-8{
+  width: 2rem;
+  height: 2rem;
+}
+
 .min-h-screen{
   min-height: 100vh;
 }
@@ -661,6 +666,10 @@ video {
 .bg-main-off-white{
   --tw-bg-opacity: 1;
   background-color: rgb(241 241 236 / var(--tw-bg-opacity));
+}
+
+.p-6{
+  padding: 1.5rem;
 }
 
 .pt-10{

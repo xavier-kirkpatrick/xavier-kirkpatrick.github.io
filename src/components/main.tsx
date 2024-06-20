@@ -1,5 +1,5 @@
 import { StrictMode } from "react";
-import { rootRoute } from "../routes/__root";
+import { Route as rootRoute } from "../routes/__root";
 import ReactDOM from "react-dom/client";
 import {
   RouterProvider,
