@@ -71,12 +71,15 @@ function SideBar() {
 
       {/* Home link */}
       <Link to="/">
-        <motion.p className="ml-20 mt-4">Home</motion.p>
+        <motion.p className="ml-20 mt-4 text-lg">Home</motion.p>
       </Link>
 
       {/* ------- Dev Academy section -------- */}
       <div className="relative mt-1">
-        <motion.p className="ml-20 font-jost text-lg">Dev Academy</motion.p>
+        <motion.p className="ml-20 block text-wrap font-jost text-lg">
+          Dev<motion.p className="block">Academy</motion.p>
+        </motion.p>
+        o {/* Dev Academy svg */}
         <motion.svg
           width={17}
           height={104}

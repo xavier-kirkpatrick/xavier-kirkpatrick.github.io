@@ -5,7 +5,7 @@ import SideBar from "../components/SideBar";
 
 export const Route = createRootRoute({
   component: () => (
-    <div className="min-h-screen bg-main-off-white">
+    <div className="bg-mainBgColour min-h-screen">
       <Header />
       <SideBar />
       <Outlet />

@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        "main-off-white": "#F1F1EC",
+        mainBgColour: "var(--main-background-color)",
       },
       fontFamily: {
         raleway: ["Raleway", "sans-serif"],
