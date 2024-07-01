@@ -607,6 +607,10 @@ video {
   top: 1.75rem;
 }
 
+.top-9 {
+  top: 2.25rem;
+}
+
 .ml-20 {
   margin-left: 5rem;
 }
@@ -651,10 +655,6 @@ video {
   display: inline-block;
 }
 
-.inline {
-  display: inline;
-}
-
 .flex {
   display: flex;
 }
@@ -669,6 +669,10 @@ video {
 
 .flex-col {
   flex-direction: column;
+}
+
+.content-between {
+  align-content: space-between;
 }
 
 .items-baseline {
@@ -728,6 +732,10 @@ video {
 
 .tracking-wider {
   letter-spacing: 0.05em;
+}
+
+.outline {
+  outline-style: solid;
 }
 
 .transition {

@@ -25,6 +25,7 @@ function SideBar() {
       {/* ------- Contents section ------- */}
       <div className="relative">
         <motion.p className="ml-8 mt-12 font-jost text-lg">Contents</motion.p>
+        {/* Contents branch svg */}
         <motion.svg
           width={17}
           height={443}
@@ -33,7 +34,7 @@ function SideBar() {
           xmlns="http://www.w3.org/2000/svg"
           initial="hidden"
           animate="visible"
-          className="absolute left-12 top-7"
+          className="absolute left-12 top-7 outline"
         >
           <motion.g id="Contents">
             <motion.line
@@ -75,11 +76,11 @@ function SideBar() {
       </Link>
 
       {/* ------- Dev Academy section -------- */}
-      <div className="relative mt-1">
+      <div className="mt-1">
         <motion.p className="ml-20 block text-wrap font-jost text-lg">
-          Dev<motion.p className="block">Academy</motion.p>
+          Dev<motion.p>Academy</motion.p>
         </motion.p>
-        o {/* Dev Academy svg */}
+        {/* Dev Academy branch svg */}
         <motion.svg
           width={17}
           height={104}
@@ -88,7 +89,7 @@ function SideBar() {
           xmlns="http://www.w3.org/2000/svg"
           initial="hidden"
           animate="visible"
-          className="absolute left-24 top-7"
+          className="relative left-24"
         >
           <motion.g id="Dev Academy Branch">
             <motion.line
