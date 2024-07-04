@@ -21,7 +21,8 @@ const animateBranches = {
 
 function SideBar() {
   return (
-    <div>
+    // Container div here
+    <div className="mt-1 h-screen w-52 border-2 border-solid border-black">
       {/* ------- Contents section ------- */}
       <div className="relative">
         <motion.p className="ml-8 mt-12 font-jost text-lg">Contents</motion.p>
@@ -34,9 +35,9 @@ function SideBar() {
           xmlns="http://www.w3.org/2000/svg"
           initial="hidden"
           animate="visible"
-          className="absolute left-12 top-7 outline"
+          className="absolute left-12 top-7"
         >
-          <motion.g id="Contents">
+          <motion.g id="Contents svg">
             <motion.line
               id="Line 3"
               x1={0.5}
