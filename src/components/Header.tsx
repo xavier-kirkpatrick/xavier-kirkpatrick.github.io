@@ -57,51 +57,48 @@ function Header() {
   };
 
   return (
-    <>
-      <div
-        id="container"
-        className="ml-56 mr-60 flex items-baseline justify-between pt-10"
-      >
-        <motion.div className="font-jost text-2xl tracking-wider">
+    // Header Container div below
+    <div id="container" className="h-32 border-2 border-solid border-red-700">
+      {/* ------- Header bar text & date section ------- */}
+
+      <div className="flex items-baseline justify-between pt-10">
+        <motion.div className="pl-28 font-jost text-2xl tracking-wider">
           <h1>{animateXavKirk("Xavier")}</h1>
           <h1>{animateXavKirk("Kirkpatrick")}</h1>
         </motion.div>
 
-        <div>
-          <motion.div
-            className="flex flex-col justify-evenly tracking-wider"
-            variants={headerLine}
-            transition={{ duration: 1 }}
-            initial="hidden"
-            animate="visible"
-          >
-            <p className="font-jost text-lg">Tāmaki Makaurau, NZ</p>
-
-            <p className="font-jost text-lg">
-              {dateTime
-                .toLocaleTimeString("en-US", {
-                  hour: "2-digit",
-                  minute: "2-digit",
-                  hour12: false,
-                })
-                .replace(/:/g, ":")}
-              {" - "}
-              {dateTime.toLocaleDateString()}
-            </p>
-          </motion.div>
-        </div>
-      </div>
-
-      <div>
         <motion.div
-          className="ml-52 mr-10 border-b border-black pt-2 font-jost text-2xl"
+          className="flex-col justify-evenly tracking-wider "
           variants={headerLine}
-          transition={{ duration: 4 }}
+          transition={{ duration: 1 }}
           initial="hidden"
           animate="visible"
-        />
+        >
+          <p className="font-jost text-lg">Tāmaki Makaurau, NZ</p>
+
+          <p className="font-jost text-lg">
+            {dateTime
+              .toLocaleTimeString("en-US", {
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: false,
+              })
+              .replace(/:/g, ":")}
+            {" - "}
+            {dateTime.toLocaleDateString()}
+          </p>
+        </motion.div>
       </div>
-    </>
+
+      {/* ------- Header bar separator line ------- */}
+      <motion.div
+        className="border-b border-solid border-black pl-52 pr-10"
+        variants={headerLine}
+        transition={{ duration: 4 }}
+        initial="hidden"
+        animate="visible"
+      ></motion.div>
+    </div>
   );
 }
 

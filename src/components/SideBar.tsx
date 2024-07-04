@@ -21,10 +21,13 @@ const animateBranches = {
 
 function SideBar() {
   return (
-    <div>
+    // Container div here
+    <div className="absolute mt-1 h-full w-52 border-2 border-solid border-black">
       {/* ------- Contents section ------- */}
-      <div className="relative">
-        <motion.p className="ml-8 mt-12 font-jost text-lg">Contents</motion.p>
+      <div className="">
+        <motion.p className="relative left-3 top-4 font-jost text-lg">
+          Contents
+        </motion.p>
         {/* Contents branch svg */}
         <motion.svg
           width={17}
@@ -34,9 +37,9 @@ function SideBar() {
           xmlns="http://www.w3.org/2000/svg"
           initial="hidden"
           animate="visible"
-          className="absolute left-12 top-7 outline"
+          className="relative left-12 top-7"
         >
-          <motion.g id="Contents">
+          <motion.g id="Contents svg">
             <motion.line
               id="Line 3"
               x1={0.5}
@@ -72,7 +75,9 @@ function SideBar() {
 
       {/* Home link */}
       <Link to="/">
-        <motion.p className="ml-20 mt-4 text-lg">Home</motion.p>
+        <motion.p className="absolute left-20 top-14 mt-4 text-lg">
+          Home
+        </motion.p>
       </Link>
 
       {/* ------- Dev Academy section -------- */}
@@ -82,14 +87,14 @@ function SideBar() {
         </motion.p>
         {/* Dev Academy branch svg */}
         <motion.svg
-          width={17}
-          height={104}
+          // width={17}
+          // height={443}
           viewBox="0 0 17 104"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           initial="hidden"
           animate="visible"
-          className="relative left-24"
+          className="relative left-24 h-24"
         >
           <motion.g id="Dev Academy Branch">
             <motion.line
