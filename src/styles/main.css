@@ -1,5 +1,7 @@
 :root {
   --main-background-color: #f1f1ec;
+  --sidebar-font: 16px;
+  --sidebar-link-colour: #444eff;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");

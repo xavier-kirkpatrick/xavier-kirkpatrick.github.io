@@ -5,11 +5,15 @@ export default {
     extend: {
       colors: {
         mainBgColour: "var(--main-background-color)",
+        blueLink: "var(--sidebar-link-colour)",
       },
       fontFamily: {
         raleway: ["Raleway", "sans-serif"],
         oswald: ["Oswald", "sans-serif"],
         jost: ["Jost", "sans-serif"],
+      },
+      fontSize: {
+        sideBar: "var(--side-bar-font)",
       },
     },
   },
