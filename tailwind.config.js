@@ -8,12 +8,11 @@ export default {
         blueLink: "var(--sidebar-link-colour)",
       },
       fontFamily: {
-        raleway: ["Raleway", "sans-serif"],
-        oswald: ["Oswald", "sans-serif"],
-        jost: ["Jost", "sans-serif"],
+        primary: "var(--primary-font-family)",
+        secondary: "var(--secondary-font-family)",
       },
       fontSize: {
-        sideBar: "var(--side-bar-font)",
+        sideBar: "var(--sidebar-font-size)",
       },
     },
   },

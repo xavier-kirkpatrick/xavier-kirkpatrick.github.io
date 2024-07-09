@@ -25,7 +25,7 @@ function SideBar() {
     <div className="relative mt-1 min-h-screen w-52 border-2 border-solid border-black">
       {/* ------- Contents section ------- */}
       <div className="">
-        <motion.p className="absolute left-10 top-4 font-jost text-[16px]">
+        <motion.p className="absolute left-10 top-4 font-primary text-sideBar">
           Contents
         </motion.p>
         {/* Contents branch svg */}
@@ -75,14 +75,14 @@ function SideBar() {
 
       {/* Home link */}
       <Link to="/">
-        <motion.p className="text-sideBar text-blueLink absolute left-20 top-14 mt-4">
+        <motion.p className="absolute left-20 top-14 mt-4 text-sideBar text-blueLink hover:underline">
           Home
         </motion.p>
       </Link>
 
       {/* ------- Dev Academy section -------- */}
       <div className="">
-        <motion.p className="absolute block text-wrap font-jost text-lg">
+        <motion.p className="absolute block text-wrap font-primary text-sideBar">
           Dev<motion.p>Academy</motion.p>
         </motion.p>
         {/* Dev Academy branch svg */}

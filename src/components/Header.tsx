@@ -58,11 +58,11 @@ function Header() {
 
   return (
     // Header Container div below
-    <div id="container" className="h-32 border-2 border-solid border-red-700">
+    <div className="h-32 border-2 border-solid border-red-700">
       {/* ------- Header bar text & date section ------- */}
 
       <div className="flex items-baseline justify-between pt-10">
-        <motion.div className="pl-28 font-jost text-2xl tracking-wider">
+        <motion.div className="pl-28 font-primary text-2xl tracking-wider">
           <h1>{animateXavKirk("Xavier")}</h1>
           <h1>{animateXavKirk("Kirkpatrick")}</h1>
         </motion.div>
@@ -74,7 +74,9 @@ function Header() {
           initial="hidden"
           animate="visible"
         >
-          <p className="font-jost text-lg">Tāmaki Makaurau, NZ</p>
+          <p className="font-primary text-lg font-normal">
+            Tāmaki Makaurau, NZ
+          </p>
 
           <p className="font-jost text-lg">
             {dateTime

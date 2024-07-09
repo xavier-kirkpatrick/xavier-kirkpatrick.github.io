@@ -1,6 +1,8 @@
 :root {
   --main-background-color: #f1f1ec;
-  --sidebar-font: 16px;
+  --primary-font-family: "Poppins", sans-serif;
+  --secondary-font-family: "Jost", sans-serif;
+  --sidebar-font-size: 16px;
   --sidebar-link-colour: #444eff;
 }
 
@@ -732,17 +734,13 @@ video {
   padding-top: 2.5rem;
 }
 
-.font-jost {
-  font-family: Jost, sans-serif;
+.font-primary {
+  font-family: var(--primary-font-family);
 }
 
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-.text-\[16px\] {
-  font-size: 16px;
 }
 
 .text-lg {
@@ -751,7 +749,11 @@ video {
 }
 
 .text-sideBar {
-  font-size: var(--side-bar-font);
+  font-size: var(--sidebar-font-size);
+}
+
+.font-normal {
+  font-weight: 400;
 }
 
 .tracking-wider {
@@ -768,6 +770,10 @@ video {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+.hover\:underline:hover {
+  text-decoration-line: underline;
 }
 
 .\[\&\.active\]\:font-bold.active {
