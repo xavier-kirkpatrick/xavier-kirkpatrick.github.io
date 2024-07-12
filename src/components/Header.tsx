@@ -84,7 +84,7 @@ function Header() {
 
       {/* ------- Header bar separator line ------- */}
       <motion.div
-        className="absolute left-[200px] w-[1190px] border-b border-solid border-black"
+        className="absolute left-[200px] w-5/6 border-b border-solid border-black pr-10"
         variants={headerLine}
         transition={{ duration: 1 }}
         initial="hidden"
