@@ -17,8 +17,25 @@ const letter = {
 };
 
 const headerLine = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1 },
+  hidden: { opacity: 0, x: -500 },
+  visible: { opacity: 1, x: 0 },
+};
+
+export const animateText = (text: string) => {
+  return (
+    <motion.div
+      className="inline-block overflow-hidden"
+      variants={container}
+      initial="hidden"
+      animate="visible"
+    >
+      {text.split("").map((character, index) => (
+        <motion.div variants={letter} key={index} className="inline-block">
+          {character === " " ? "\u00A0" : character}
+        </motion.div>
+      ))}
+    </motion.div>
+  );
 };
 
 // Header Component ----------------------------------------------------------------------
@@ -35,68 +52,41 @@ function Header() {
     };
   }, []);
 
-  const animateXavKirk = (name: string) => {
-    return (
-      <motion.div
-        className="inline-block overflow-hidden"
-        variants={container}
-        initial="hidden"
-        animate="visible"
-      >
-        {name.split("").map((character) => (
-          <motion.div
-            variants={letter}
-            key={character}
-            className="inline-block"
-          >
-            {character}
-          </motion.div>
-        ))}
-      </motion.div>
-    );
-  };
-
   return (
     // Header Container div below
-    <div className="h-32 border-2 border-solid border-red-700">
-      {/* ------- Header bar text & date section ------- */}
-
-      <div className="flex items-baseline justify-between pt-10">
-        <motion.div className="pl-28 font-primary text-2xl tracking-wider">
-          <h1>{animateXavKirk("Xavier")}</h1>
-          <h1>{animateXavKirk("Kirkpatrick")}</h1>
+    // <div className="h-32 border-2 border-solid border-red-700">
+    <div>
+      <div className="flex items-start pb-3 pt-10 tracking-wider">
+        {/* ------- Header bar name title section ------- */}
+        <motion.div className="pl-[216px] font-primary text-2xl leading-[25px]">
+          <h1>{animateText("Xavier")}</h1>
+          <h1>{animateText("Kirkpatrick")}</h1>
         </motion.div>
-
-        <motion.div
-          className="flex-col justify-evenly tracking-wider "
-          variants={headerLine}
-          transition={{ duration: 1 }}
-          initial="hidden"
-          animate="visible"
-        >
-          <p className="font-primary text-lg font-normal">
-            Tāmaki Makaurau, NZ
-          </p>
-
-          <p className="font-jost text-lg">
-            {dateTime
-              .toLocaleTimeString("en-US", {
-                hour: "2-digit",
-                minute: "2-digit",
-                hour12: false,
-              })
-              .replace(/:/g, ":")}
-            {" - "}
-            {dateTime.toLocaleDateString()}
-          </p>
+        {/* ------- Header bar date + time + location section ------- */}
+        <motion.div className="font-primary text-[17px] leading-[20px]">
+          <div className="absolute right-0 pr-[235px]">
+            <p>{animateText("Tāmaki Makaurau, NZ")}</p>
+            <div className="flex justify-between">
+              {animateText(
+                dateTime
+                  .toLocaleTimeString("en-US", {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hour12: false,
+                  })
+                  .replace(/:/g, ":"),
+              )}
+              <div>{animateText(dateTime.toLocaleDateString())}</div>
+            </div>
+          </div>
         </motion.div>
       </div>
 
       {/* ------- Header bar separator line ------- */}
       <motion.div
-        className="border-b border-solid border-black pl-52 pr-10"
+        className="absolute left-[200px] w-[1190px] border-b border-solid border-black"
         variants={headerLine}
-        transition={{ duration: 4 }}
+        transition={{ duration: 1 }}
         initial="hidden"
         animate="visible"
       ></motion.div>

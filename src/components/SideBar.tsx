@@ -22,13 +22,14 @@ const animateBranches = {
 function SideBar() {
   return (
     // Container div here
-    <div className="relative mt-1 min-h-screen w-52 border-2 border-solid border-black">
+    <div className="relative mt-1 h-[620px] w-52 border-2 border-solid border-black">
       {/* ------- Contents section ------- */}
-      <div className="">
-        <motion.p className="absolute left-10 top-4 font-primary text-sideBar">
-          Contents
-        </motion.p>
-        {/* Contents branch svg */}
+
+      <motion.p className="absolute left-[21px] top-[36px] font-primary text-sideBar">
+        Contents
+      </motion.p>
+      {/* Contents branch svg */}
+      <div>
         <motion.svg
           width={17}
           height={443}
@@ -37,7 +38,7 @@ function SideBar() {
           xmlns="http://www.w3.org/2000/svg"
           initial="hidden"
           animate="visible"
-          className="absolute left-12 top-7"
+          className="absolute left-[31px] top-[59px]"
         >
           <motion.g id="Contents svg">
             <motion.line
@@ -71,18 +72,17 @@ function SideBar() {
             />
           </motion.g>
         </motion.svg>
+        {/* Home link */}
+        <Link to="/">
+          <motion.p className="absolute left-[52px] top-[75px] text-sideBar text-blueLink hover:underline">
+            Home
+          </motion.p>
+        </Link>
       </div>
-
-      {/* Home link */}
-      <Link to="/">
-        <motion.p className="absolute left-20 top-14 mt-4 text-sideBar text-blueLink hover:underline">
-          Home
-        </motion.p>
-      </Link>
 
       {/* ------- Dev Academy section -------- */}
       <div className="">
-        <motion.p className="absolute block text-wrap font-primary text-sideBar">
+        <motion.p className="absolute left-[52px] top-[100px] block text-wrap font-primary text-sideBar">
           Dev<motion.p>Academy</motion.p>
         </motion.p>
         {/* Dev Academy branch svg */}
@@ -94,7 +94,7 @@ function SideBar() {
           xmlns="http://www.w3.org/2000/svg"
           initial="hidden"
           animate="visible"
-          className="relative top-0"
+          className="absolute left-[62px] top-0"
         >
           <motion.g id="Dev Academy Branch">
             <motion.line
