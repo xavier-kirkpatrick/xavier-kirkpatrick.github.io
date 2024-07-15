@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
+import ContentsSVG from "../SVGComponents/ContentsSVG";
 
 // "animateBranches" handles animation and tranisition duration of the tree menu branches
 const animateBranches = {
@@ -29,56 +30,15 @@ function SideBar() {
         Contents
       </motion.p>
       {/* Contents branch svg */}
-      <div>
-        <motion.svg
-          width={17}
-          height={443}
-          viewBox="0 0 17 443"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          initial="hidden"
-          animate="visible"
-          className="absolute left-[31px] top-[59px]"
-        >
-          <motion.g id="Contents svg">
-            <motion.line
-              id="Line 3"
-              x1={0.5}
-              x2={0.5}
-              y2={30}
-              stroke="black"
-              variants={animateBranches}
-              custom={0.1}
-            />
-            <motion.line
-              id="Line 4"
-              x1={0.993774}
-              y1={29.5}
-              x2={15.9938}
-              y2={29.5}
-              stroke="black"
-              variants={animateBranches}
-              custom={0.5}
-            />
-            <motion.line
-              id="Line 5"
-              x1={16.5}
-              y1={21}
-              x2={16.5}
-              y2={443}
-              stroke="black"
-              variants={animateBranches}
-              custom={1.0}
-            />
-          </motion.g>
-        </motion.svg>
-        {/* Home link */}
-        <Link to="/">
-          <motion.p className="absolute left-[52px] top-[75px] text-sideBar text-blueLink hover:underline">
-            Home
-          </motion.p>
-        </Link>
+      <div className="absolute left-[31px] top-[59px] h-auto w-[17px]">
+        <ContentsSVG animateBranches={animateBranches} />
       </div>
+      {/* Home link */}
+      <Link to="/">
+        <motion.p className="absolute left-[52px] top-[75px] text-sideBar text-blueLink hover:underline">
+          Home
+        </motion.p>
+      </Link>
 
       {/* ------- Dev Academy section -------- */}
       <div className="">
