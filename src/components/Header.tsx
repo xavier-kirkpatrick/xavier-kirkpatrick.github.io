@@ -6,6 +6,7 @@ const container = {
   visible: {
     opacity: 1,
     transition: {
+      delayChildren: 0.5,
       staggerChildren: 0.1,
     },
   },
@@ -54,9 +55,10 @@ function Header() {
 
   return (
     // Header Container div below
-    // <div className="h-32 border-2 border-solid border-red-700">
+    // Border div here:
+    // <div className="h-[136px] border-2 border-solid border-red-700">
     <div>
-      <div className="flex items-start pb-3 pt-10 tracking-wider">
+      <div className="flex items-start pb-3 pt-10 font-light tracking-wider">
         {/* ------- Header bar name title section ------- */}
         <motion.div className="pl-[216px] font-primary text-2xl leading-[25px]">
           <h1>{animateText("Xavier")}</h1>

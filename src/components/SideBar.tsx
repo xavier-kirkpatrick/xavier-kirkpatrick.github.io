@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
+import { animateText } from "./Header";
 import ContentsSVG from "../SVGComponents/ContentsSVG";
+import DevAcademySVG from "../SVGComponents/EDASVG";
 
 // "animateBranches" handles animation and tranisition duration of the tree menu branches
 const animateBranches = {
@@ -23,71 +25,33 @@ const animateBranches = {
 function SideBar() {
   return (
     // Container div here
-    <div className="relative mt-1 h-[620px] w-52 border-2 border-solid border-black">
+    <div className="relative mt-1 h-[620px] w-52 border-2 border-solid border-black font-light">
       {/* ------- Contents section ------- */}
 
-      <motion.p className="absolute left-[21px] top-[36px] font-primary text-sideBar">
-        Contents
+      <motion.p className="absolute left-[21px] top-[34px] font-primary text-sideBar">
+        {animateText("Contents")}
       </motion.p>
       {/* Contents branch svg */}
-      <div className="absolute left-[31px] top-[59px] h-auto w-[17px]">
+      <div className="absolute left-[31px] top-[54px] h-auto w-[17px]">
         <ContentsSVG animateBranches={animateBranches} />
       </div>
       {/* Home link */}
       <Link to="/">
-        <motion.p className="absolute left-[52px] top-[75px] text-sideBar text-blueLink hover:underline">
-          Home
+        <motion.p className="absolute left-[52px] top-[70px] text-sideBar text-blueLink hover:underline">
+          {animateText("Home")}
         </motion.p>
       </Link>
 
       {/* ------- Dev Academy section -------- */}
-      <div className="">
-        <motion.p className="absolute left-[52px] top-[100px] block text-wrap font-primary text-sideBar">
-          Dev<motion.p>Academy</motion.p>
+      <div>
+        <motion.p className="absolute left-[52px] top-[100px] block text-wrap font-primary text-sideBar leading-4">
+          {animateText("Dev")}
+          <motion.p>{animateText("Academy")}</motion.p>
         </motion.p>
-        {/* Dev Academy branch svg */}
-        <motion.svg
-          width={17}
-          height={443}
-          viewBox="0 0 17 104"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          initial="hidden"
-          animate="visible"
-          className="absolute left-[62px] top-0"
-        >
-          <motion.g id="Dev Academy Branch">
-            <motion.line
-              id="Line 6"
-              x1={0.5}
-              x2={0.5}
-              y2={30}
-              stroke="black"
-              variants={animateBranches}
-              custom={0.1}
-            />
-            <motion.line
-              id="Line 7"
-              x1={0.993774}
-              y1={29.5}
-              x2={15.9938}
-              y2={29.5}
-              stroke="black"
-              variants={animateBranches}
-              custom={0.5}
-            />
-            <motion.line
-              id="Line 8"
-              x1={16.5}
-              y1={21}
-              x2={16.5}
-              y2={104}
-              stroke="black"
-              variants={animateBranches}
-              custom={1.0}
-            />
-          </motion.g>
-        </motion.svg>
+      </div>
+      {/* Dev Academy branch svg */}
+      <div className="absolute left-[62px] top-[138px] h-auto w-[17px]">
+        <DevAcademySVG animateBranches={animateBranches} />
       </div>
     </div>
   );
