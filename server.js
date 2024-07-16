@@ -89,7 +89,7 @@ if (process.env.NODE_ENV === "production") {
 var server_default = server;
 
 // server/index.ts
-var PORT = process.env.PORT || 3e3;
+var PORT = process.env.PORT ?? 3e3;
 server_default.listen(PORT, () => {
   console.log("Server listening on port", PORT);
 });
