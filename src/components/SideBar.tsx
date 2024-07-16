@@ -33,7 +33,7 @@ const linkHoverEffect = {
 function SideBar() {
   return (
     // Sidebar space container div
-    <div className="relative mt-1 h-[620px] w-52 font-light">
+    <div className="relative mt-1 h-[620px] w-52 tracking-wider">
       {/* sidebar menu container div */}
       <div className="">
         {/* ------- Contents branch ------- */}

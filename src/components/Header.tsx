@@ -60,7 +60,7 @@ function Header() {
     <div>
       <div className="flex items-start pb-1 pt-10 ">
         {/* ------- Header bar name title section ------- */}
-        <motion.div className="pl-[216px] font-primary text-[25px] font-normal leading-8">
+        <motion.div className="pl-[216px] font-primary text-[25px] font-normal leading-8 tracking-wider">
           <h1>{animateText("Xavier")}</h1>
           <h1>{animateText("Kirkpatrick")}</h1>
         </motion.div>
