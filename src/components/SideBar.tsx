@@ -7,24 +7,28 @@ import ProjectsSVG from "../SVGComponents/ProjectsSVG";
 import AudioSVG from "../SVGComponents/AudioSVG";
 import PersonalSVG from "../SVGComponents/PersonalSVG";
 
-// "animateBranches" handles animation and tranisition duration of the tree menu branches
+// "animateBranches" handles animation and tranisition duration of the menu SVG branches
 const animateBranches = {
   hidden: { pathLength: 0, opacity: 0 },
-  visible: {
-    pathLength: 1,
-    opacity: 1,
-    transition: {
-      pathLength: { delay: 1, type: "spring", duration: 2, bounce: 0 },
-      opacity: { delay: 1, duration: 0.05 },
-    },
+  visible: (dly: number) => {
+    const delay = 0.7 + dly * 0.5;
+    return {
+      pathLength: 1,
+      opacity: 1,
+      transition: {
+        pathLength: { delay, type: "spring", duration: 2, bounce: 0 },
+        opacity: { delay, duration: 0.09 },
+      },
+    };
   },
 };
 
+// Link text magnifying hover effect
 const linkHoverEffect = {
-  initial: { scale: 1 },
+  initial: { x: 0 },
   whileHover: {
-    scale: 1.1,
-    transition: { type: "spring", stiffness: 300, damping: 20 },
+    x: 4,
+    transition: { duration: 0.3 },
   },
 };
 
@@ -33,7 +37,7 @@ const linkHoverEffect = {
 function SideBar() {
   return (
     // Sidebar space container div
-    <div className="relative mt-1 h-[620px] w-52 tracking-wider">
+    <div className="relative mt-1 tracking-wider">
       {/* sidebar menu container div */}
       <div className="">
         {/* ------- Contents branch ------- */}
@@ -62,25 +66,87 @@ function SideBar() {
 
         {/* ------- Dev Academy branch -------- */}
         <div>
-          <p className="absolute left-[52px] top-[100px] font-primary text-sideBar leading-[15px]">
-            {animateText("Dev")}
+          <div className="absolute left-[52px] top-[100px] font-primary text-sideBar">
+            <p className="mb-[-14px]">{animateText("Dev")}</p>
             <p>{animateText("Academy")}</p>
-          </p>
+          </div>
 
           {/* Dev Academy branch SVG */}
           <div className="absolute left-[62px] top-[138px] h-auto w-[17px]">
             <DevAcademySVG animateBranches={animateBranches} />
           </div>
+          {/* Dev Academy submenu links */}
+
+          <div className="absolute left-[82px] top-[154px] flex flex-col space-y-[0px]">
+            <Link to="">
+              <motion.p
+                initial="initial"
+                whileHover="whileHover"
+                variants={linkHoverEffect}
+                className="text-sideBar text-blueLink"
+              >
+                <p className="mb-[-14px]">{animateText("Foundations")}</p>
+                <p>{animateText("Blog")}</p>
+              </motion.p>
+            </Link>
+
+            <Link to="">
+              <motion.p
+                initial="initial"
+                whileHover="whileHover"
+                variants={linkHoverEffect}
+                className="text-sideBar text-blueLink"
+              >
+                {animateText("Projects")}
+              </motion.p>
+            </Link>
+
+            <Link to="">
+              <motion.p
+                initial="initial"
+                whileHover="whileHover"
+                variants={linkHoverEffect}
+                className="text-sideBar text-blueLink"
+              >
+                {animateText("Infomation")}
+              </motion.p>
+            </Link>
+          </div>
         </div>
         {/* ------- Current Projects branch -------- */}
         <div>
-          <p className="absolute left-[52px] top-[253px] font-primary text-sideBar leading-[15px]">
-            {animateText("Current")}
+          <p className="absolute left-[52px] top-[253px] font-primary text-sideBar">
+            <p className="mb-[-14px]">{animateText("Current")}</p>
             <p>{animateText("Projects")}</p>
           </p>
           {/* Current Projects branch SVG */}
           <div className="absolute left-[62px] top-[291px] h-auto w-[17px]">
             <ProjectsSVG animateBranches={animateBranches} />
+          </div>
+          {/* Current Projects submenu links */}
+
+          <div className="absolute left-[82px] top-[307px] flex flex-col space-y-[1px]">
+            <Link to="">
+              <motion.p
+                initial="initial"
+                whileHover="whileHover"
+                variants={linkHoverEffect}
+                className="text-sideBar text-blueLink"
+              >
+                <p>{animateText("Plchldr")}</p>
+              </motion.p>
+            </Link>
+
+            <Link to="">
+              <motion.p
+                initial="initial"
+                whileHover="whileHover"
+                variants={linkHoverEffect}
+                className="text-sideBar text-blueLink"
+              >
+                {animateText("Task Master")}
+              </motion.p>
+            </Link>
           </div>
         </div>
         {/* ------- Audio branch -------- */}
@@ -92,6 +158,42 @@ function SideBar() {
           <div className="absolute left-[62px] top-[384px] h-auto w-[17px]">
             <AudioSVG animateBranches={animateBranches} />
           </div>
+          {/* Audio submenu links */}
+
+          <div className="absolute left-[82px] top-[400px] flex flex-col space-y-[-2px]">
+            <Link to="">
+              <motion.p
+                initial="initial"
+                whileHover="whileHover"
+                variants={linkHoverEffect}
+                className="text-sideBar text-blueLink"
+              >
+                <p>{animateText("COS Sound")}</p>
+              </motion.p>
+            </Link>
+
+            <Link to="">
+              <motion.p
+                initial="initial"
+                whileHover="whileHover"
+                variants={linkHoverEffect}
+                className="text-sideBar text-blueLink"
+              >
+                {animateText("4::section")}
+              </motion.p>
+            </Link>
+
+            <Link to="">
+              <motion.p
+                initial="initial"
+                whileHover="whileHover"
+                variants={linkHoverEffect}
+                className="text-sideBar text-blueLink"
+              >
+                {animateText("Infomation")}
+              </motion.p>
+            </Link>
+          </div>
         </div>
         {/* ------- Personal branch -------- */}
         <div>
@@ -101,6 +203,53 @@ function SideBar() {
           {/* Personal branch SVG */}
           <div className="absolute left-[62px] top-[501px] h-auto w-[17px]">
             <PersonalSVG animateBranches={animateBranches} />
+          </div>
+          {/* Personal submenu links */}
+
+          <div className="absolute left-[82px] top-[517px] flex flex-col space-y-[-2px]">
+            <Link to="">
+              <motion.p
+                initial="initial"
+                whileHover="whileHover"
+                variants={linkHoverEffect}
+                className="text-sideBar text-blueLink"
+              >
+                <p>{animateText("Email")}</p>
+              </motion.p>
+            </Link>
+
+            <Link to="">
+              <motion.p
+                initial="initial"
+                whileHover="whileHover"
+                variants={linkHoverEffect}
+                className="text-sideBar text-blueLink"
+              >
+                {animateText("Resume")}
+              </motion.p>
+            </Link>
+
+            <Link to="">
+              <motion.p
+                initial="initial"
+                whileHover="whileHover"
+                variants={linkHoverEffect}
+                className="text-sideBar text-blueLink"
+              >
+                {animateText("LinkedIn")}
+              </motion.p>
+            </Link>
+
+            <Link to="">
+              <motion.p
+                initial="initial"
+                whileHover="whileHover"
+                variants={linkHoverEffect}
+                className="text-sideBar text-blueLink"
+              >
+                {animateText("GitHub")}
+              </motion.p>
+            </Link>
           </div>
         </div>
       </div>

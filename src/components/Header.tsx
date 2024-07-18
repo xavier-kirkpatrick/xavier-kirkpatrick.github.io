@@ -19,7 +19,7 @@ const letter = {
 
 const headerLine = {
   hidden: { opacity: 0, x: -1000 },
-  visible: { opacity: 5, x: 0, transition: { duration: 2 } },
+  visible: { opacity: 5, x: 0, transition: { duration: 2, delay: 0.5 } },
 };
 
 export const animateText = (text: string) => {

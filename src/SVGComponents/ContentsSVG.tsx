@@ -14,6 +14,7 @@ function ContentsSVG({
       xmlns="http://www.w3.org/2000/svg"
       initial="hidden"
       animate="visible"
+      preserveAspectRatio="xMidYMid meet"
     >
       <motion.g id="Contents svg">
         <motion.line
