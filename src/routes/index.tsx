@@ -10,7 +10,8 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    // <div className="border-2 border-solid border-green-500">
-    <div>{/* <HomePage /> */}</div>
+    <div className="bg-mainBgColour">
+      <HomePage />
+    </div>
   );
 }
