@@ -17,9 +17,9 @@ const letter = {
   visible: { opacity: 1 },
 };
 
-const headerLine = {
-  hidden: { opacity: 0, x: -1000 },
-  visible: { opacity: 5, x: 0, transition: { duration: 2 } },
+export const headerLine = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 2, delay: 0.5 } },
 };
 
 export const animateText = (text: string) => {
@@ -58,15 +58,15 @@ function Header() {
     // Border div here:
     // <div className="h-[136px] border-2 border-solid border-red-700">
     <div>
-      <div className="flex items-start pb-1 pt-10 ">
+      <div className="relative flex items-start pb-1 pt-10">
         {/* ------- Header bar name title section ------- */}
-        <motion.div className="pl-[216px] font-primary text-[25px] font-normal leading-8 tracking-wider">
+        <motion.div className="pl-[40px] font-primary text-[25px] font-normal leading-8 tracking-wider">
           <h1>{animateText("Xavier")}</h1>
           <h1>{animateText("Kirkpatrick")}</h1>
         </motion.div>
         {/* ------- Header bar date + time + location section ------- */}
-        <motion.div className="font-primary text-[17px] leading-[23px]">
-          <div className="absolute right-0 pr-[235px]">
+        <motion.div className="absolute right-[100px] font-primary text-[17px] leading-[23px]">
+          <div className="">
             <p className="tracking-wider">
               {animateText("Tāmaki Makaurau, NZ")}
             </p>
@@ -88,7 +88,7 @@ function Header() {
 
       {/* ------- Header bar separator line ------- */}
       <motion.div
-        className="absolute left-[200px] right-0 w-5/6 border-b border-solid border-black pr-10"
+        className="border-b border-solid border-black"
         variants={headerLine}
         transition={{ duration: 1 }}
         initial="hidden"
