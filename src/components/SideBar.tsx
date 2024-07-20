@@ -231,7 +231,7 @@ function SideBar() {
                 </motion.p>
               </Link>
 
-              <Link to="">
+              <Link>
                 <motion.p
                   initial="initial"
                   whileHover="whileHover"

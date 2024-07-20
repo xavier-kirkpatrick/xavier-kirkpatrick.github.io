@@ -10,15 +10,33 @@ const fadeInText = {
   },
 };
 
+const leftDrag = {
+  top: -50,
+  left: -50,
+  right: 30,
+  bottom: 50,
+};
+
+const rightDrag = {
+  top: -50,
+  left: -30,
+  right: 50,
+  bottom: 50,
+};
+
 function HomePage() {
   return (
     <motion.div
-      className="text-mainFont flex flex-shrink-0 flex-wrap items-start justify-center space-x-6 font-primary"
+      className="flex flex-shrink-0 flex-wrap items-start justify-center space-x-6 font-primary text-mainFont"
       variants={fadeInText}
       initial="initial"
       animate="animate"
     >
-      <div className="w-[400px] pt-[80px]">
+      <motion.div
+        drag
+        dragConstraints={leftDrag}
+        className="w-[400px] pt-[80px]"
+      >
         <p>
           Hello, I’m a Software Developer based out of Tāmaki Makaurau,
           Auckland, New Zealand.
@@ -28,8 +46,12 @@ function HomePage() {
           It is an exciting time for me as I pivot into the tech industry, and
           in 2024, I am looking to kickstart my career as a Developer.
         </p>
-      </div>
-      <div className="w-[400px] pt-[200px]">
+      </motion.div>
+      <motion.div
+        drag
+        dragConstraints={rightDrag}
+        className="w-[400px] pt-[200px]"
+      >
         <p>
           Here you can find work completed during my time at Dev Academy
           Aotearoa as well as other external projects.
@@ -41,7 +63,7 @@ function HomePage() {
         </p>
         <br />
         <p>kirkpatrickxavier@gmail.com</p>
-      </div>
+      </motion.div>
     </motion.div>
   );
 }
