@@ -18,8 +18,8 @@ const letter = {
 };
 
 export const headerLine = {
-  hidden: { opacity: 0, x: -1000 },
-  visible: { opacity: 5, x: 0, transition: { duration: 2, delay: 0.5 } },
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 2, delay: 0.5 } },
 };
 
 export const animateText = (text: string) => {
@@ -88,7 +88,7 @@ function Header() {
 
       {/* ------- Header bar separator line ------- */}
       <motion.div
-        className="mr-10 border-b border-solid border-black"
+        className="border-b border-solid border-black"
         variants={headerLine}
         transition={{ duration: 1 }}
         initial="hidden"

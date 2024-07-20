@@ -38,13 +38,13 @@ function SideBar() {
   return (
     // Sidebar space container div
     <div>
-      <div className="bg-mainBgColour pt-[100px]">
-        <div className="relative tracking-wider">
+      <div className="bg-mainBgColour">
+        <div className="relative top-[100px] tracking-wide">
           {/* sidebar menu container div */}
 
           {/* ------- Contents branch ------- */}
           <div>
-            <p className="absolute left-[21px] top-[34px] font-primary text-sideBar">
+            <p className="absolute left-[21px] top-[34px] font-primary text-mainFont">
               {animateText("Contents")}
             </p>
 
@@ -60,7 +60,7 @@ function SideBar() {
               initial="initial"
               whileHover="whileHover"
               variants={linkHoverEffect}
-              className="absolute left-[52px] top-[70px] text-sideBar text-blueLink hover:underline"
+              className="absolute left-[52px] top-[70px] text-mainFont text-blueLink hover:underline"
             >
               {animateText("Home")}
             </motion.p>
@@ -68,7 +68,7 @@ function SideBar() {
 
           {/* ------- Dev Academy branch -------- */}
           <div>
-            <div className="absolute left-[52px] top-[100px] font-primary text-sideBar">
+            <div className="absolute left-[52px] top-[100px] font-primary text-mainFont">
               <p className="mb-[-14px]">{animateText("Dev")}</p>
               <p>{animateText("Academy")}</p>
             </div>
@@ -85,7 +85,7 @@ function SideBar() {
                   initial="initial"
                   whileHover="whileHover"
                   variants={linkHoverEffect}
-                  className="text-sideBar text-blueLink"
+                  className="text-mainFont text-blueLink"
                 >
                   <p className="mb-[-14px]">{animateText("Foundations")}</p>
                   <p>{animateText("Blog")}</p>
@@ -97,7 +97,7 @@ function SideBar() {
                   initial="initial"
                   whileHover="whileHover"
                   variants={linkHoverEffect}
-                  className="text-sideBar text-blueLink"
+                  className="text-mainFont text-blueLink"
                 >
                   {animateText("Projects")}
                 </motion.p>
@@ -108,7 +108,7 @@ function SideBar() {
                   initial="initial"
                   whileHover="whileHover"
                   variants={linkHoverEffect}
-                  className="text-sideBar text-blueLink"
+                  className="text-mainFont text-blueLink"
                 >
                   {animateText("Infomation")}
                 </motion.p>
@@ -117,7 +117,7 @@ function SideBar() {
           </div>
           {/* ------- Current Projects branch -------- */}
           <div>
-            <p className="absolute left-[52px] top-[253px] font-primary text-sideBar">
+            <p className="absolute left-[52px] top-[253px] font-primary text-mainFont">
               <p className="mb-[-14px]">{animateText("Current")}</p>
               <p>{animateText("Projects")}</p>
             </p>
@@ -133,7 +133,7 @@ function SideBar() {
                   initial="initial"
                   whileHover="whileHover"
                   variants={linkHoverEffect}
-                  className="text-sideBar text-blueLink"
+                  className="text-mainFont text-blueLink"
                 >
                   <p>{animateText("Plchldr")}</p>
                 </motion.p>
@@ -144,7 +144,7 @@ function SideBar() {
                   initial="initial"
                   whileHover="whileHover"
                   variants={linkHoverEffect}
-                  className="text-sideBar text-blueLink"
+                  className="text-mainFont text-blueLink"
                 >
                   {animateText("Task Master")}
                 </motion.p>
@@ -153,7 +153,7 @@ function SideBar() {
           </div>
           {/* ------- Audio branch -------- */}
           <div>
-            <p className="absolute left-[52px] top-[366px] font-primary text-sideBar leading-[15px]">
+            <p className="absolute left-[52px] top-[366px] font-primary text-mainFont leading-[15px]">
               {animateText("Audio")}
             </p>
             {/* Audio branch SVG */}
@@ -168,7 +168,7 @@ function SideBar() {
                   initial="initial"
                   whileHover="whileHover"
                   variants={linkHoverEffect}
-                  className="text-sideBar text-blueLink"
+                  className="text-mainFont text-blueLink"
                 >
                   <p>{animateText("COS Sound")}</p>
                 </motion.p>
@@ -179,7 +179,7 @@ function SideBar() {
                   initial="initial"
                   whileHover="whileHover"
                   variants={linkHoverEffect}
-                  className="text-sideBar text-blueLink"
+                  className="text-mainFont text-blueLink"
                 >
                   {animateText("4::section")}
                 </motion.p>
@@ -190,7 +190,7 @@ function SideBar() {
                   initial="initial"
                   whileHover="whileHover"
                   variants={linkHoverEffect}
-                  className="text-sideBar text-blueLink"
+                  className="text-mainFont text-blueLink"
                 >
                   {animateText("Infomation")}
                 </motion.p>
@@ -199,7 +199,7 @@ function SideBar() {
           </div>
           {/* ------- Personal branch -------- */}
           <div>
-            <p className="absolute left-[52px] top-[483px] font-primary text-sideBar leading-[15px]">
+            <p className="absolute left-[52px] top-[483px] font-primary text-mainFont leading-[15px]">
               {animateText("Personal")}
             </p>
             {/* Personal branch SVG */}
@@ -214,7 +214,7 @@ function SideBar() {
                   initial="initial"
                   whileHover="whileHover"
                   variants={linkHoverEffect}
-                  className="text-sideBar text-blueLink"
+                  className="text-mainFont text-blueLink"
                 >
                   <p>{animateText("Email")}</p>
                 </motion.p>
@@ -225,7 +225,7 @@ function SideBar() {
                   initial="initial"
                   whileHover="whileHover"
                   variants={linkHoverEffect}
-                  className="text-sideBar text-blueLink"
+                  className="text-mainFont text-blueLink"
                 >
                   {animateText("Resume")}
                 </motion.p>
@@ -236,7 +236,7 @@ function SideBar() {
                   initial="initial"
                   whileHover="whileHover"
                   variants={linkHoverEffect}
-                  className="text-sideBar text-blueLink"
+                  className="text-mainFont text-blueLink"
                 >
                   {animateText("LinkedIn")}
                 </motion.p>
@@ -247,7 +247,7 @@ function SideBar() {
                   initial="initial"
                   whileHover="whileHover"
                   variants={linkHoverEffect}
-                  className="text-sideBar text-blueLink"
+                  className="text-mainFont text-blueLink"
                 >
                   {animateText("GitHub")}
                 </motion.p>
@@ -257,7 +257,7 @@ function SideBar() {
         </div>
       </div>
       <motion.div
-        className="mt-[30px] h-auto w-0 border-r-[1px] border-solid border-black pl-[192px]"
+        className="ml-auto h-lvh border-r-[1px] border-solid border-black"
         variants={headerLine}
         transition={{ duration: 1 }}
         initial="hidden"

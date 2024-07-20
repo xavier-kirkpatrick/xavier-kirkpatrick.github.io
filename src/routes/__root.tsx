@@ -6,7 +6,7 @@ import SideBar from "../components/SideBar";
 export const Route = createRootRoute({
   component: () => (
     <div className="grid grid-cols-[204px_1fr] bg-mainBgColour">
-      <nav className="min-h-screen w-[204px] ">
+      <nav className="min-h-screen">
         <SideBar />
       </nav>
       <div className="flex flex-col">
