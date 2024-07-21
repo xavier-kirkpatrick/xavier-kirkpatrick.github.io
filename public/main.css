@@ -685,20 +685,12 @@ video {
   margin-bottom: -14px;
 }
 
-.ml-auto {
-  margin-left: auto;
-}
-
-.ml-5 {
-  margin-left: 1.25rem;
-}
-
-.ml-8 {
-  margin-left: 2rem;
-}
-
 .ml-10 {
   margin-left: 2.5rem;
+}
+
+.ml-auto {
+  margin-left: auto;
 }
 
 .inline-block {
@@ -739,14 +731,6 @@ video {
 
 .w-\[17px\] {
   width: 17px;
-}
-
-.w-\[400px\] {
-  width: 400px;
-}
-
-.w-\[300px\] {
-  width: 300px;
 }
 
 .w-\[350px\] {

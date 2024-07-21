@@ -163,16 +163,20 @@ function SideBar() {
             {/* Audio submenu links */}
 
             <div className="absolute left-[82px] top-[400px] flex flex-col space-y-[-2px]">
-              <Link to="">
-                <motion.p
-                  initial="initial"
-                  whileHover="whileHover"
-                  variants={linkHoverEffect}
-                  className="text-mainFont text-blueLink"
+              <motion.p
+                initial="initial"
+                whileHover="whileHover"
+                variants={linkHoverEffect}
+                className="text-mainFont text-blueLink"
+              >
+                <a
+                  href="https://soundcloud.com/cos-sound"
+                  target="_blank"
+                  rel="noreferrer"
                 >
-                  <p>{animateText("COS Sound")}</p>
-                </motion.p>
-              </Link>
+                  {animateText("COS Sound")}
+                </a>
+              </motion.p>
 
               <Link to="">
                 <motion.p
@@ -231,27 +235,35 @@ function SideBar() {
                 </motion.p>
               </Link>
 
-              <Link>
-                <motion.p
-                  initial="initial"
-                  whileHover="whileHover"
-                  variants={linkHoverEffect}
-                  className="text-mainFont text-blueLink"
+              <motion.p
+                initial="initial"
+                whileHover="whileHover"
+                variants={linkHoverEffect}
+                className="text-mainFont text-blueLink"
+              >
+                <a
+                  href="https://www.linkedin.com/in/xavier-kirkpatrick-ab0aba2a3/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   {animateText("LinkedIn")}
-                </motion.p>
-              </Link>
+                </a>
+              </motion.p>
 
-              <Link to="">
-                <motion.p
-                  initial="initial"
-                  whileHover="whileHover"
-                  variants={linkHoverEffect}
-                  className="text-mainFont text-blueLink"
+              <motion.p
+                initial="initial"
+                whileHover="whileHover"
+                variants={linkHoverEffect}
+                className="text-mainFont text-blueLink"
+              >
+                <a
+                  href="https://github.com/xavier-kirkpatrick"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   {animateText("GitHub")}
-                </motion.p>
-              </Link>
+                </a>
+              </motion.p>
             </div>
           </div>
         </div>
