@@ -13,13 +13,13 @@ const fadeInText = {
 const leftDrag = {
   top: -50,
   left: -50,
-  right: 30,
+  right: 50,
   bottom: 50,
 };
 
 const rightDrag = {
   top: -50,
-  left: -30,
+  left: -50,
   right: 50,
   bottom: 50,
 };
@@ -35,7 +35,7 @@ function HomePage() {
       <motion.div
         drag
         dragConstraints={leftDrag}
-        className="w-[400px] pt-[80px]"
+        className="w-[350px] pt-[80px]"
       >
         <p>
           Hello, I’m a Software Developer based out of Tāmaki Makaurau,
@@ -50,7 +50,7 @@ function HomePage() {
       <motion.div
         drag
         dragConstraints={rightDrag}
-        className="w-[400px] pt-[200px]"
+        className="w-[350px] pt-[200px]"
       >
         <p>
           Here you can find work completed during my time at Dev Academy

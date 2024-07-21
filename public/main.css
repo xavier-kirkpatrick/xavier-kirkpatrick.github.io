@@ -689,6 +689,18 @@ video {
   margin-left: auto;
 }
 
+.ml-5 {
+  margin-left: 1.25rem;
+}
+
+.ml-8 {
+  margin-left: 2rem;
+}
+
+.ml-10 {
+  margin-left: 2.5rem;
+}
+
 .inline-block {
   display: inline-block;
 }
@@ -731,6 +743,14 @@ video {
 
 .w-\[400px\] {
   width: 400px;
+}
+
+.w-\[300px\] {
+  width: 300px;
+}
+
+.w-\[350px\] {
+  width: 350px;
 }
 
 .flex-auto {
