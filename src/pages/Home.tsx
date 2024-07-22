@@ -13,13 +13,13 @@ const fadeInText = {
 const leftDrag = {
   top: -50,
   left: -50,
-  right: 50,
+  right: 150,
   bottom: 50,
 };
 
 const rightDrag = {
   top: -50,
-  left: -50,
+  left: -150,
   right: 50,
   bottom: 50,
 };
