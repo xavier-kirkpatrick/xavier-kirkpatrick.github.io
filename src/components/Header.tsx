@@ -62,7 +62,7 @@ function Header() {
         {/* ------- Header bar name title section ------- */}
         <motion.div className="pl-[40px] font-primary text-[25px] font-normal leading-8 tracking-wider">
           <h1>{animateText("Xavier")}</h1>
-          <h1 className="ml-10">{animateText("Kirkpatrick")}</h1>
+          <h1>{animateText("Kirkpatrick")}</h1>
         </motion.div>
         {/* ------- Header bar date + time + location section ------- */}
         <motion.div className="absolute right-[100px] font-primary text-[17px] leading-[23px]">
