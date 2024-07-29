@@ -8,7 +8,6 @@
     "fullstack"
   ],
   "homepage": "https://xavier-kirkpatrick.github.io",
-
   "scripts": {
     "start": "node dist/server.js",
     "dev": "run-p dev:server dev:client dev:css",
@@ -36,8 +35,10 @@
   },
   "dependencies": {
     "@million/lint": "^1.0.0-rc.20",
-    "@tanstack/react-router": "^1.35.1",
+    "@tanstack/react-router": "^1.45.11",
     "@tanstack/router-cli": "^1.30.0",
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5",
     "express": "^4.17.2",
     "framer-motion": "^11.2.10",
     "knex": "^2.5.1",

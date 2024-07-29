@@ -910,7 +910,3 @@ video {
 .hover\:underline:hover {
   text-decoration-line: underline;
 }
-
-.\[\&\.active\]\:font-bold.active {
-  font-weight: 700;
-}

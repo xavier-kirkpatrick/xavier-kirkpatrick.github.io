@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { getWeather } from "../apis/weatherApi";
 
 const container = {
   hidden: { opacity: 1 },
@@ -53,6 +55,11 @@ function Header() {
     };
   }, []);
 
+  const { data, isLoading } = useQuery({
+    queryKey: ["weather"],
+    queryFn: getWeather,
+  });
+
   return (
     // Header Container div below
     // Border div here:
@@ -84,6 +91,9 @@ function Header() {
             </p>
           </div>
         </motion.div>
+      </div>
+      <div>
+        {data ? <p>{data.current.condition.text}</p> : <p>{isLoading}</p>}
       </div>
 
       {/* ------- Header bar separator line ------- */}
