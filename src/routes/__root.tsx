@@ -10,18 +10,20 @@ export const Route = createRootRoute({
   component: () => (
     <QueryClientProvider client={queryClient}>
       <div className="grid grid-cols-[204px_1fr] bg-mainBgColour">
+        {/* First column */}
         <nav className="min-h-screen">
           <SideBar />
         </nav>
+        {/* Second column */}
         <div className="flex flex-col">
-          <aside className="h-[150px] ">
+          <aside>
             <Header />
           </aside>
-          <main className="flex-auto ">
+          <main className="flex-1">
             <Outlet />
           </main>
         </div>
-        <TanStackRouterDevtools />
+        {/* <TanStackRouterDevtools /> */}
       </div>
     </QueryClientProvider>
   ),

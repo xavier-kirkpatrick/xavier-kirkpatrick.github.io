@@ -59,7 +59,7 @@ function Header() {
     // Border div here:
     // <div className="h-[136px] border-2 border-solid border-red-700">
     <div>
-      <div className="relative flex items-start pb-1 pt-10">
+      <div className="relative flex h-[130px] items-start pt-10">
         {/* ------- Header bar name title section ------- */}
         <motion.div className="pl-[40px] font-primary text-[25px] font-normal leading-8 tracking-wider">
           <h1>{animateText("Xavier")}</h1>
@@ -68,7 +68,7 @@ function Header() {
         {/* ------- Header bar date + time + location section ------- */}
         <motion.div className="absolute right-[100px] font-primary text-[17px] leading-[23px]">
           <p className="tracking-wider">{animateText("Tāmaki Makaurau, NZ")}</p>
-          <p className="flex justify-between tracking-widest">
+          <div className="flex justify-between tracking-widest">
             {animateText(
               dateTime
                 .toLocaleTimeString("en-US", {
@@ -79,16 +79,15 @@ function Header() {
                 .replace(/:/g, ":"),
             )}
             {animateText(dateTime.toLocaleDateString())}
-          </p>
-
+          </div>
+          {/* WeatherAPI Component */}
           <DisplayWeather />
         </motion.div>
       </div>
-      <div></div>
 
       {/* ------- Header bar separator line ------- */}
       <motion.div
-        className="border-b border-solid border-black"
+        className="border-b-[1px] border-solid border-black"
         variants={headerLine}
         transition={{ duration: 1 }}
         initial="hidden"
