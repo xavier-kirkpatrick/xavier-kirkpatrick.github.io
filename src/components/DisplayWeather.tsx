@@ -28,8 +28,9 @@ function DisplayWeather() {
 
   return (
     <div>
-      <p>{data?.weather.current.condition.text}</p>
+      <p>Weather: {data?.weather.current.condition.text}</p>
       <p>Temp: {data?.weather.current.temp_c}&deg;C</p>
+      <p>Sunset: {data?.astronomy.astronomy.astro.sunset}</p>
     </div>
   );
 }

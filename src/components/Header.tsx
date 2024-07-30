@@ -31,8 +31,8 @@ export const animateText = (text: string) => {
       initial="hidden"
       animate="visible"
     >
-      {text.split("").map((character, index) => (
-        <motion.div variants={letter} key={index} className="inline-block">
+      {text.split("").map((character) => (
+        <motion.div variants={letter} key={character} className="inline-block">
           {character === " " ? "\u00A0" : character}
         </motion.div>
       ))}
