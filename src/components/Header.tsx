@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { getWeather } from "../apis/weatherApi";
+import DisplayWeather from "./DisplayWeather";
 
 const container = {
   hidden: { opacity: 1 },
@@ -49,16 +48,11 @@ function Header() {
   useEffect(() => {
     const interval = setInterval(() => {
       setDateTime(new Date());
-    }, 1000);
+    }, 30000);
     return () => {
       clearInterval(interval);
     };
   }, []);
-
-  const { data, isLoading } = useQuery({
-    queryKey: ["weather"],
-    queryFn: getWeather,
-  });
 
   return (
     // Header Container div below
@@ -73,28 +67,24 @@ function Header() {
         </motion.div>
         {/* ------- Header bar date + time + location section ------- */}
         <motion.div className="absolute right-[100px] font-primary text-[17px] leading-[23px]">
-          <div className="">
-            <p className="tracking-wider">
-              {animateText("Tāmaki Makaurau, NZ")}
-            </p>
-            <p className="flex justify-between tracking-widest">
-              {animateText(
-                dateTime
-                  .toLocaleTimeString("en-US", {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                    hour12: false,
-                  })
-                  .replace(/:/g, ":"),
-              )}
-              {animateText(dateTime.toLocaleDateString())}
-            </p>
-          </div>
+          <p className="tracking-wider">{animateText("Tāmaki Makaurau, NZ")}</p>
+          <p className="flex justify-between tracking-widest">
+            {animateText(
+              dateTime
+                .toLocaleTimeString("en-US", {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                  hour12: false,
+                })
+                .replace(/:/g, ":"),
+            )}
+            {animateText(dateTime.toLocaleDateString())}
+          </p>
+
+          <DisplayWeather />
         </motion.div>
       </div>
-      <div>
-        {data ? <p>{data.current.condition.text}</p> : <p>{isLoading}</p>}
-      </div>
+      <div></div>
 
       {/* ------- Header bar separator line ------- */}
       <motion.div

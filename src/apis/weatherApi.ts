@@ -1,18 +1,54 @@
 import axios from "axios";
+import { AstroDataShape, WeatherDataShape } from "../../models/getWeatherType";
 
-export async function getWeather(): Promise<void> {
-  const apikey = import.meta.env.VITE_WEATHER_API_KEY;
+export async function fetchWeatherData() {
+  const date = new Date();
+  const formattedDate = formatDate(date);
+  const apiKey = getApiKey();
 
-  if (!apikey) {
-    console.log("API key not found");
+  if (!apiKey) {
+    console.error("API key not found");
     return;
   }
 
   try {
-    const url = `http://api.weatherapi.com/v1/current.json?key=${apikey}&q=auckland&aqi=no`;
-    const { data } = await axios.get(url);
-    console.log(data);
+    const [weatherData, astronomyData] = await Promise.all([
+      fetchWeather(apiKey),
+      fetchAstronomy(apiKey, formattedDate),
+    ]);
+    const weatherApiData = {
+      weather: weatherData,
+      astronomy: astronomyData,
+    };
+    console.log(weatherApiData);
+    return weatherApiData;
   } catch (error) {
-    console.log("Weather report not available", error);
+    console.error("Weather report not available", error);
   }
+}
+
+function formatDate(date: Date): string {
+  const formattedDate = date.toLocaleDateString().replace(/\//g, "-");
+  return formattedDate.split("-").reverse().join("-");
+}
+
+function getApiKey(): string {
+  return import.meta.env.VITE_WEATHER_API_KEY;
+}
+
+async function fetchWeather(apiKey: string): Promise<WeatherDataShape> {
+  const { data } = await axios.get(
+    `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=auckland&aqi=yes`,
+  );
+  return data;
+}
+
+async function fetchAstronomy(
+  apiKey: string,
+  date: string,
+): Promise<AstroDataShape> {
+  const { data } = await axios.get(
+    `https://api.weatherapi.com/v1/astronomy.json?key=${apiKey}&q=auckland&dt=${date}`,
+  );
+  return data;
 }
