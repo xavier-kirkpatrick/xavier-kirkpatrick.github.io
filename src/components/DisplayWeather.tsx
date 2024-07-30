@@ -18,6 +18,7 @@ function DisplayWeather() {
     message: string;
   };
 
+  // Display weather + asto data on front end and handel loading + error states.
   if (isLoading) {
     return <div>Loading...</div>;
   }
