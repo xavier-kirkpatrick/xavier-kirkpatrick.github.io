@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import DisplayWeather from "./DisplayWeather";
 
 const container = {
   hidden: { opacity: 1 },
@@ -30,8 +31,8 @@ export const animateText = (text: string) => {
       initial="hidden"
       animate="visible"
     >
-      {text.split("").map((character, index) => (
-        <motion.div variants={letter} key={index} className="inline-block">
+      {text.split("").map((character) => (
+        <motion.div variants={letter} key={character} className="inline-block">
           {character === " " ? "\u00A0" : character}
         </motion.div>
       ))}
@@ -47,7 +48,7 @@ function Header() {
   useEffect(() => {
     const interval = setInterval(() => {
       setDateTime(new Date());
-    }, 1000);
+    }, 30000);
     return () => {
       clearInterval(interval);
     };
@@ -58,7 +59,7 @@ function Header() {
     // Border div here:
     // <div className="h-[136px] border-2 border-solid border-red-700">
     <div>
-      <div className="relative flex items-start pb-1 pt-10">
+      <div className="relative flex h-[130px] items-start pt-10">
         {/* ------- Header bar name title section ------- */}
         <motion.div className="pl-[40px] font-primary text-[25px] font-normal leading-8 tracking-wider">
           <h1>{animateText("Xavier")}</h1>
@@ -66,29 +67,27 @@ function Header() {
         </motion.div>
         {/* ------- Header bar date + time + location section ------- */}
         <motion.div className="absolute right-[100px] font-primary text-[17px] leading-[23px]">
-          <div className="">
-            <p className="tracking-wider">
-              {animateText("Tāmaki Makaurau, NZ")}
-            </p>
-            <p className="flex justify-between tracking-widest">
-              {animateText(
-                dateTime
-                  .toLocaleTimeString("en-US", {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                    hour12: false,
-                  })
-                  .replace(/:/g, ":"),
-              )}
-              {animateText(dateTime.toLocaleDateString())}
-            </p>
+          <p className="tracking-wider">{animateText("Tāmaki Makaurau, NZ")}</p>
+          <div className="flex justify-between tracking-widest">
+            {animateText(
+              dateTime
+                .toLocaleTimeString("en-US", {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                  hour12: false,
+                })
+                .replace(/:/g, ":"),
+            )}
+            {animateText(dateTime.toLocaleDateString())}
           </div>
+          {/* WeatherAPI Component */}
+          <DisplayWeather />
         </motion.div>
       </div>
 
       {/* ------- Header bar separator line ------- */}
       <motion.div
-        className="border-b border-solid border-black"
+        className="border-b-[1px] border-solid border-black"
         variants={headerLine}
         transition={{ duration: 1 }}
         initial="hidden"
