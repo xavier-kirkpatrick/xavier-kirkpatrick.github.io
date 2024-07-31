@@ -6,25 +6,17 @@ export async function fetchWeatherData() {
   const formattedDate = formatDate(date);
   const apiKey = getApiKey();
 
-  if (!apiKey) {
-    console.error("API key not found");
-    return;
-  }
+  const [weatherData, astronomyData] = await Promise.all([
+    fetchWeather(apiKey),
+    fetchAstronomy(apiKey, formattedDate),
+  ]);
+  const weatherApiData = {
+    weather: weatherData,
+    astronomy: astronomyData,
+  };
+  console.log(weatherApiData);
 
-  try {
-    const [weatherData, astronomyData] = await Promise.all([
-      fetchWeather(apiKey),
-      fetchAstronomy(apiKey, formattedDate),
-    ]);
-    const weatherApiData = {
-      weather: weatherData,
-      astronomy: astronomyData,
-    };
-    console.log(weatherApiData);
-    return weatherApiData;
-  } catch (error) {
-    console.error("Weather report not available", error);
-  }
+  return weatherApiData;
 }
 
 function formatDate(date: Date): string {
@@ -33,22 +25,35 @@ function formatDate(date: Date): string {
 }
 
 function getApiKey(): string {
-  return import.meta.env.VITE_WEATHER_API_KEY;
+  const getApiKey = import.meta.env.VITE_WEATHER_API_KEY;
+  return !getApiKey
+    ? (console.error("API key not found"), "API key not found")
+    : getApiKey;
 }
 
 async function fetchWeather(apiKey: string): Promise<WeatherDataShape> {
-  const { data } = await axios.get(
-    `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=auckland&aqi=yes`,
-  );
-  return data;
+  try {
+    const { data } = await axios.get(
+      `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=auckland&aqi=yes`,
+    );
+    return data;
+  } catch (error) {
+    console.error(error);
+    throw new Error("Weather data not available");
+  }
 }
 
 async function fetchAstronomy(
   apiKey: string,
   date: string,
 ): Promise<AstroDataShape> {
-  const { data } = await axios.get(
-    `https://api.weatherapi.com/v1/astronomy.json?key=${apiKey}&q=auckland&dt=${date}`,
-  );
-  return data;
+  try {
+    const { data } = await axios.get(
+      `https://api.weatherapi.com/v1/astronomy.json?key=${apiKey}&q=auckland&dt=${date}`,
+    );
+    return data;
+  } catch (error) {
+    console.error(error);
+    throw new Error("Astronomy data not available");
+  }
 }
