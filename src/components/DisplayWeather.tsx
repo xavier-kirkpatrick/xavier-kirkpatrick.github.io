@@ -28,7 +28,15 @@ function DisplayWeather() {
   }
 
   return (
-    <Marquee autoFill={true} pauseOnHover={true} delay={4}>
+    <Marquee
+      autoFill={true}
+      speed={35}
+      pauseOnHover={true}
+      delay={4}
+      gradient={true}
+      gradientWidth={25}
+      gradientColor="#f1f1ec"
+    >
       <div className="flex flex-row space-x-6 text-[15px] tracking-wide">
         <p>Weather: {data?.weather.current.condition.text}</p>
         <p>Temp: {data?.weather.current.temp_c}&deg;C</p>
