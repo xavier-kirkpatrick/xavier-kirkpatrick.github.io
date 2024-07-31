@@ -67,24 +67,23 @@ function Header() {
         </motion.div>
         {/* ------- Header bar date + time + location section ------- */}
         <motion.div className="absolute right-[100px] font-primary text-[17px] leading-[23px]">
-          <div className="">
-            <p className="tracking-wider">
-              {animateText("Tāmaki Makaurau, NZ")}
-            </p>
-            <p className="flex justify-between tracking-widest">
-              {animateText(
-                dateTime
-                  .toLocaleTimeString("en-US", {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                    hour12: false,
-                  })
-                  .replace(/:/g, ":"),
-              )}
-              {animateText(dateTime.toLocaleDateString())}
-            </p>
+          <p className="tracking-wider">{animateText("Tāmaki Makaurau, NZ")}</p>
+          <p className="flex space-x-9 tracking-widest">
+            {animateText(
+              dateTime
+                .toLocaleTimeString("en-US", {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                  hour12: false,
+                })
+                .replace(/:/g, ":"),
+            )}
+            {animateText(dateTime.toLocaleDateString())}
+          </p>
+
+          <div className="w-[300px]">
+            <DisplayWeather />
           </div>
-          <DisplayWeather />
         </motion.div>
       </div>
 
