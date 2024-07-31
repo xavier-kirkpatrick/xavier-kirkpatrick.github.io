@@ -7,7 +7,7 @@
   "keywords": [
     "fullstack"
   ],
-  "homepage": "https://xavier-kirkpatrick.github.io",
+  "homepage": "https://www.xavier-kirkpatrick.github.io",
   "scripts": {
     "start": "node dist/server.js",
     "dev": "run-p dev:server dev:client dev:css",
