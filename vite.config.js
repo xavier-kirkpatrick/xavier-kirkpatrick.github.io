@@ -13,5 +13,5 @@ export default defineConfig({
       "/api": "http://localhost:3000",
     },
   },
-  base: "xavier-kirkpatrick.github.io",
+  // base: "xavier-kirkpatrick.github.io",
 });

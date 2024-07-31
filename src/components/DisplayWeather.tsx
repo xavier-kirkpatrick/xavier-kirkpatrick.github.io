@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchWeatherData } from "../apis/weatherApi";
+import Marquee from "react-fast-marquee";
 
 function DisplayWeather() {
   // Fetch weather + asto data, calls new data at 8 minute intervals.
@@ -27,11 +28,22 @@ function DisplayWeather() {
   }
 
   return (
-    <div className="flex flex-row space-x-6 text-[15px] tracking-wide">
-      <p>Weather: {data?.weather.current.condition.text}</p>
-      <p>Temp: {data?.weather.current.temp_c}&deg;C</p>
-      <p>Sunset: {data?.astronomy.astronomy.astro.sunset}</p>
-    </div>
+    <Marquee
+      autoFill={true}
+      speed={35}
+      pauseOnHover={true}
+      delay={4}
+      gradient={true}
+      gradientWidth={25}
+      gradientColor="#f1f1ec"
+    >
+      <div className="flex flex-row space-x-6 text-[15px] tracking-wide">
+        <p>Weather: {data?.weather.current.condition.text}</p>
+        <p>Temp: {data?.weather.current.temp_c}&deg;C</p>
+        <p>Sunset: {data?.astronomy.astronomy.astro.sunset}</p>
+        <p></p>
+      </div>
+    </Marquee>
   );
 }
 

@@ -5,7 +5,8 @@ export async function fetchWeatherData() {
   const date = new Date();
   const formattedDate = formatDate(date);
   const apiKey = getApiKey();
-
+  // Promise.all fails if either axios.get requests fail in its array.
+  // Promise.allSettled will only fail if one fails and should be used but additional error handling is needed for this.
   const [weatherData, astronomyData] = await Promise.all([
     fetchWeather(apiKey),
     fetchAstronomy(apiKey, formattedDate),
