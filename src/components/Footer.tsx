@@ -2,8 +2,18 @@ import { motion } from "framer-motion";
 import { headerLine } from "./Header";
 
 function Footer() {
+  const fadeInText = {
+    initial: { opacity: 0 },
+    animate: {
+      opacity: 0.7,
+      transition: {
+        duration: 5,
+      },
+    },
+  };
+
   return (
-    <div>
+    <>
       <motion.div
         className="border-b border-solid border-black"
         variants={headerLine}
@@ -11,8 +21,15 @@ function Footer() {
         initial="hidden"
         animate="visible"
       ></motion.div>
-      <p className="text-center font-primary text-sm">Footer</p>
-    </div>
+      <motion.p
+        variants={fadeInText}
+        initial="initial"
+        animate="animate"
+        className="text-center font-primary text-sm text-slate-800"
+      >
+        &copy; 2024 Xavier Kirkpatrick
+      </motion.p>
+    </>
   );
 }
 
