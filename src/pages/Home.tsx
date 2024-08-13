@@ -61,8 +61,6 @@ function HomePage() {
           You’ll also find other non-development related interests where I spend
           my time, personal information and points of contact.
         </p>
-        <br />
-        <p>kirkpatrickxavier@gmail.com</p>
       </motion.div>
     </motion.div>
   );

@@ -40,7 +40,7 @@ function DisplayWeather() {
       pauseOnHover={true}
       delay={4}
       gradient={true}
-      gradientWidth={15}
+      gradientWidth={5}
       gradientColor="#f1f1ec"
     >
       <motion.div
