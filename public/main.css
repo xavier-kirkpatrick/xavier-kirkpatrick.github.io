@@ -769,6 +769,14 @@ video {
   align-items: flex-end;
 }
 
+.items-center {
+  align-items: center;
+}
+
+.items-stretch {
+  align-items: stretch;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -801,6 +809,18 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(1px * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1px * var(--tw-space-y-reverse));
+}
+
+.space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .overflow-hidden {
@@ -891,6 +911,26 @@ video {
 
 .leading-\[23px\] {
   line-height: 23px;
+}
+
+.leading-\[30px\] {
+  line-height: 30px;
+}
+
+.leading-\[20px\] {
+  line-height: 20px;
+}
+
+.leading-\[36px\] {
+  line-height: 36px;
+}
+
+.leading-\[26px\] {
+  line-height: 26px;
+}
+
+.leading-\[25px\] {
+  line-height: 25px;
 }
 
 .tracking-wide {
