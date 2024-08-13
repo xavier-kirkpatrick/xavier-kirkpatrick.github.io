@@ -40,6 +40,8 @@ function DisplayWeather() {
       <div className="flex flex-row space-x-6 text-[15px] tracking-wide">
         <p>Weather: {data?.weather.current.condition.text}</p>
         <p>Temp: {data?.weather.current.temp_c}&deg;C</p>
+        <p>Pressure: {data?.weather.current.pressure_mb}mb</p>
+        <p>UV Index: {data?.weather.current.uv}</p>
         <p>Sunset: {data?.astronomy.astronomy.astro.sunset}</p>
         <p></p>
       </div>
