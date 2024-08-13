@@ -3,6 +3,8 @@ export interface WeatherDataShape {
     air_quality: { co: number; no2: number };
     condition: { text: string };
     temp_c: number;
+    pressure_mb: number;
+    uv: number;
   };
   location: { country: string; name: string };
 }

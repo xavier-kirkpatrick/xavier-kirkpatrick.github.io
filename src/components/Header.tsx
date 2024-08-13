@@ -65,20 +65,20 @@ function Header() {
           <h1>{animateText("Xavier")}</h1>
           <h1>{animateText("Kirkpatrick")}</h1>
         </motion.div>
-        {/* ------- Header bar date + time + location section ------- */}
-        <motion.div className="absolute right-[100px] flex w-[280px] flex-col items-end font-primary text-[17px] leading-[23px]">
+        {/* ------- Header bar date, time and weather data section ------- */}
+        <motion.div className="absolute right-[100px] flex w-[280px] flex-col items-center font-primary text-[17px] leading-[23px]">
           <p className="tracking-wider">{animateText("Tāmaki Makaurau, NZ")}</p>
-          <p className="flex space-x-8 tracking-widest">
+          <p className="flex space-x-8 tracking-wider">
             {animateText(
               dateTime
                 .toLocaleTimeString("en-US", {
                   hour: "2-digit",
                   minute: "2-digit",
-                  hour12: false,
+                  hour12: true,
                 })
                 .replace(/:/g, ":"),
             )}
-            {animateText(dateTime.toLocaleDateString())}
+            {animateText(dateTime.toLocaleDateString().replace(/\//g, "."))}
           </p>
 
           <p className="w-[260px]">
