@@ -3,6 +3,7 @@ import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Header from "../components/Header";
 import SideBar from "../components/SideBar";
+import Footer from "../components/Footer";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,9 @@ export const Route = createRootRoute({
           <main className="flex-1">
             <Outlet />
           </main>
+          <footer>
+            <Footer />
+          </footer>
         </div>
         {/* <TanStackRouterDevtools /> */}
       </div>

@@ -27,7 +27,7 @@ const rightDrag = {
 function HomePage() {
   return (
     <motion.div
-      className="flex flex-shrink-0 flex-wrap items-start justify-center space-x-6 font-primary text-mainFont"
+      className="flex flex-shrink-0 flex-wrap items-start justify-center space-x-10 font-primary text-mainFont"
       variants={fadeInText}
       initial="initial"
       animate="animate"

@@ -809,6 +809,12 @@ video {
   margin-bottom: calc(1px * var(--tw-space-y-reverse));
 }
 
+.space-x-10 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(2.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
@@ -863,6 +869,10 @@ video {
   padding-top: 80px;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .font-primary {
   font-family: var(--primary-font-family);
 }
@@ -881,6 +891,11 @@ video {
 
 .text-mainFont {
   font-size: var(--main-font-size);
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .font-normal {
