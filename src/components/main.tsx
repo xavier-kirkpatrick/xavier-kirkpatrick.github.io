@@ -9,7 +9,7 @@ import {
 
 // TanStack says to use notFoundComponent instead of NotFoundRoute but its not listed as an import.
 // I have tried updating TanStack router but it doesnt work.
-// Need to investigate further?
+// Need to investigate further????
 
 // Import the generated route tree
 import { routeTree } from "../routeTree.gen";
