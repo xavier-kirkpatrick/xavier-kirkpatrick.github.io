@@ -31,7 +31,7 @@ export const Route = createRootRoute({
             <Footer />
           </footer>
         </div>
-        {/* <TanStackRouterDevtools /> */}
+        <TanStackRouterDevtools />
       </div>
     </QueryClientProvider>
   ),
