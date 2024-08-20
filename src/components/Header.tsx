@@ -59,34 +59,34 @@ function Header() {
     // Border div here:
     // <div className="h-[136px] border-2 border-solid border-red-700">
     <div>
-      <div className="relative flex items-start pb-1 pt-10">
-        {/* ------- Header bar name title section ------- */}
-        <motion.div className="pl-[40px] font-primary text-[25px] font-normal leading-8 tracking-wider">
-          <h1>{animateText("Xavier")}</h1>
-          <h1>{animateText("Kirkpatrick")}</h1>
-        </motion.div>
-        {/* ------- Header bar date, time and weather data section ------- */}
-        <motion.div className="absolute right-[100px] flex w-[280px] flex-col items-center font-primary text-[17px] leading-[23px]">
-          <p className="tracking-wider">{animateText("Tāmaki Makaurau, NZ")}</p>
-          <p className="flex space-x-8 tracking-wider">
-            {animateText(
-              dateTime
-                .toLocaleTimeString("en-US", {
-                  hour: "2-digit",
-                  minute: "2-digit",
-                  hour12: true,
-                })
-                .replace(/:/g, ":"),
-            )}
-            {animateText(dateTime.toLocaleDateString().replace(/\//g, "."))}
-          </p>
-
-          <p className="w-[260px]">
-            <DisplayWeather />
-          </p>
-        </motion.div>
+      <div className="flex flex-grow-0 flex-col">
+        <div className="flex h-20 items-center">
+          {/* ------- Header bar name title section ------- */}
+          <div className="flex pl-[40px] font-primary text-[25px] font-normal leading-8 tracking-wider">
+            <h1>{animateText("Xavier Kirkpatrick")}</h1>
+          </div>
+          {/* ------- Header bar date, time and weather data section ------- */}
+          <div className="absolute right-[100px] flex items-center space-x-8 font-primary text-[18px] leading-[23px] tracking-wider">
+            <p>
+              {animateText(
+                dateTime
+                  .toLocaleTimeString("en-US", {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hour12: true,
+                  })
+                  .replace(/:/g, ":"),
+              )}
+            </p>
+            <p>
+              {animateText(dateTime.toLocaleDateString().replace(/\//g, "."))}
+            </p>
+          </div>
+        </div>
+        <p>
+          <DisplayWeather />
+        </p>
       </div>
-
       {/* ------- Header bar separator line ------- */}
       <motion.div
         className="border-b border-solid border-black"

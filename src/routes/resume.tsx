@@ -14,8 +14,8 @@ export default function Resume() {
       animate="animate"
       className="text-contentFontSize flex min-h-full flex-col items-center justify-center space-y-5 font-primary"
     >
-      <h1>Resume availble on request</h1>
-      <p>kirkpatrickxavier@gmail.com</p>
+      <h1>Resume availble on request.</h1>
+      <p>Please reach out.</p>
     </motion.div>
   );
 }

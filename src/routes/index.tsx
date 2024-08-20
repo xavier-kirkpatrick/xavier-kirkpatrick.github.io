@@ -37,7 +37,7 @@ function Home() {
         className="w-[350px] hover:text-blueLink"
       >
         <p>
-          Hello, I’m a Software Developer based out of Tāmaki Makaurau,
+          Welcome, I’m a Software Developer based out of Tāmaki Makaurau,
           Auckland, New Zealand.
         </p>
         <br />

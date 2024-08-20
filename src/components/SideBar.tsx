@@ -72,11 +72,11 @@ function SideBar() {
             </motion.p>
           </Link>
 
-          {/* ------- Dev Academy branch -------- */}
+          {/* ------- Study Projects branch -------- */}
           <div>
             <div className="absolute left-[52px] top-[100px] font-primary text-mainFont">
-              <p className="mb-[-14px]">{animateText("Dev")}</p>
-              <p>{animateText("Academy")}</p>
+              <p className="mb-[-14px]">{animateText("Study")}</p>
+              <p>{animateText("Projects")}</p>
             </div>
 
             {/* Dev Academy branch SVG */}
