@@ -224,7 +224,7 @@ function SideBar() {
                 </motion.p>
               </Link>
 
-              <Link to="">
+              <Link to="/resume">
                 <motion.p
                   initial="initial"
                   whileHover="whileHover"

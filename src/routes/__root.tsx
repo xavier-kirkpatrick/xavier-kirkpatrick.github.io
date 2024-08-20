@@ -8,7 +8,11 @@ import Footer from "../components/Footer";
 const queryClient = new QueryClient();
 
 export const Route = createRootRoute({
-  component: () => (
+  component: RootComponent,
+});
+
+function RootComponent() {
+  return (
     <QueryClientProvider client={queryClient}>
       <meta
         name="description"
@@ -34,5 +38,5 @@ export const Route = createRootRoute({
         <TanStackRouterDevtools />
       </div>
     </QueryClientProvider>
-  ),
-});
+  );
+}

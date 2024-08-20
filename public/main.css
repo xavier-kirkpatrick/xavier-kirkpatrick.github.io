@@ -721,6 +721,10 @@ video {
   height: 100lvh;
 }
 
+.max-h-svh {
+  max-height: 100svh;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -779,6 +783,10 @@ video {
 
 .justify-center {
   justify-content: center;
+}
+
+.justify-items-center {
+  justify-items: center;
 }
 
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
@@ -865,6 +873,10 @@ video {
 
 .text-center {
   text-align: center;
+}
+
+.align-middle {
+  vertical-align: middle;
 }
 
 .font-primary {
