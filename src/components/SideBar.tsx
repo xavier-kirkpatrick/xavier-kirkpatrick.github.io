@@ -277,12 +277,5 @@ function SideBar() {
     </motion.div>
   );
 }
-<motion.div
-  className="h-full"
-  variants={headerLine}
-  transition={{ duration: 1 }}
-  initial="hidden"
-  animate="visible"
-></motion.div>;
 
 export default SideBar;

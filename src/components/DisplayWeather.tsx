@@ -47,10 +47,10 @@ function DisplayWeather() {
         variants={delayWeather}
         initial="hidden"
         animate="visible"
-        className="text-[15px] tracking-wide"
+        className="text-[15px] tracking-wide text-blueLink"
       >
-        <p className="mr-4 inline-block">
-          Weather: {data?.weather.current.condition.text}
+        <p className="mr-4 inline-block opacity-65">
+          Current Weather: {data?.weather.current.condition.text}
         </p>
         <p className="mr-4 inline-block">
           Temp: {data?.weather.current.temp_c}&deg;C
