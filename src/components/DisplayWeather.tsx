@@ -56,7 +56,16 @@ function DisplayWeather() {
           Temp: {data?.weather.current.temp_c}&deg;C
         </p>
         <p className="mr-4 inline-block">
+          Humidity: {data?.weather.current.humidity}%
+        </p>
+        <p className="mr-4 inline-block">
           Pressure: {data?.weather.current.pressure_mb} mb
+        </p>
+        <p className="mr-4 inline-block">
+          Wind Speed: {data?.weather.current.wind_kph} kph
+        </p>
+        <p className="mr-4 inline-block">
+          Wind Direction: {data?.weather.current.wind_dir}
         </p>
         <p className="mr-4 inline-block">
           UV Index: {data?.weather.current.uv}{" "}

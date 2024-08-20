@@ -55,9 +55,6 @@ function Header() {
   }, []);
 
   return (
-    // Header Container div below
-    // Border div here:
-    // <div className="h-[136px] border-2 border-solid border-red-700">
     <motion.div
       variants={headerLine}
       transition={{ duration: 1 }}

@@ -1,3 +1,5 @@
+// Template not in use. This is just a reference for future work.
+
 import request from "superagent";
 
 const rootUrl = "/api/v1";
