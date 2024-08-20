@@ -18,9 +18,8 @@ function RootComponent() {
         name="description"
         content="I am a full-stack software developer. This is my web presence, built as an example of work and as a platform for my development, and non-development projects."
       />
-      <div className="flex min-h-screen flex-col bg-mainBgColour">
+      <div className="flex max-h-screen flex-col bg-mainBgColour">
         <div className="flex flex-1 flex-row">
-          {/* Adjusted sidebar width using Tailwind */}
           <nav className="w-52">
             <SideBar />
           </nav>

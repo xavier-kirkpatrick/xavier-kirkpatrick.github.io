@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
+import { fadeInText } from "../motion_variants/fadeInText";
 
 // The Index component is rendered inside the root route or __route.tsx via the outlet.
 // This is done via the createLazyFileRoute function which in configured to render Index below.
@@ -9,16 +10,6 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
-  const fadeInText = {
-    initial: { opacity: 0 },
-    animate: {
-      opacity: 1,
-      transition: {
-        duration: 5,
-      },
-    },
-  };
-
   const leftDrag = {
     top: -50,
     left: -50,
