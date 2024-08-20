@@ -60,7 +60,7 @@ function Header() {
     // <div className="h-[136px] border-2 border-solid border-red-700">
     <div>
       <div className="flex flex-grow-0 flex-col">
-        <div className="flex h-20 items-center">
+        <div className="flex h-24 items-center">
           {/* ------- Header bar name title section ------- */}
           <div className="flex pl-[40px] font-primary text-[25px] font-normal leading-8 tracking-wider">
             <h1>{animateText("Xavier Kirkpatrick")}</h1>
