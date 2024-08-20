@@ -37,9 +37,15 @@ const linkHoverEffect = {
 function SideBar() {
   return (
     // Sidebar space container div
-    <div>
-      <div className="bg-mainBgColour">
-        <div className="relative top-[100px] tracking-wide">
+    <motion.div
+      className="h-screen border-r-[1px] border-solid border-black"
+      variants={headerLine}
+      transition={{ duration: 1 }}
+      initial="hidden"
+      animate="visible"
+    >
+      <div className="h-full bg-mainBgColour">
+        <div className="tracking-wide">
           {/* sidebar menu container div */}
 
           {/* ------- Contents branch ------- */}
@@ -268,15 +274,15 @@ function SideBar() {
           </div>
         </div>
       </div>
-      <motion.div
-        className="ml-auto h-lvh border-r-[1px] border-solid border-black"
-        variants={headerLine}
-        transition={{ duration: 1 }}
-        initial="hidden"
-        animate="visible"
-      ></motion.div>
-    </div>
+    </motion.div>
   );
 }
+<motion.div
+  className="h-full"
+  variants={headerLine}
+  transition={{ duration: 1 }}
+  initial="hidden"
+  animate="visible"
+></motion.div>;
 
 export default SideBar;
