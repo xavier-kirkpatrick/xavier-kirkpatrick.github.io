@@ -6,7 +6,8 @@
   --main-background-color: #f1f1ec;
   --primary-font-family: "Poppins", sans-serif;
   --secondary-font-family: "Jost", sans-serif;
-  --main-font-size: 14px;
+  --main-font-size-sidebar: 14px;
+  --content-font-size: 15px;
   --sidebar-link-colour: #444eff;
 }
 

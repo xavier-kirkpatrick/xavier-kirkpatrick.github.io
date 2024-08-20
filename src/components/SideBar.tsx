@@ -37,9 +37,15 @@ const linkHoverEffect = {
 function SideBar() {
   return (
     // Sidebar space container div
-    <div>
-      <div className="bg-mainBgColour">
-        <div className="relative top-[100px] tracking-wide">
+    <motion.div
+      className="h-screen border-r-[1px] border-solid border-black"
+      variants={headerLine}
+      transition={{ duration: 1 }}
+      initial="hidden"
+      animate="visible"
+    >
+      <div className="h-full bg-mainBgColour">
+        <div className="tracking-wide">
           {/* sidebar menu container div */}
 
           {/* ------- Contents branch ------- */}
@@ -66,11 +72,11 @@ function SideBar() {
             </motion.p>
           </Link>
 
-          {/* ------- Dev Academy branch -------- */}
+          {/* ------- Study Projects branch -------- */}
           <div>
             <div className="absolute left-[52px] top-[100px] font-primary text-mainFont">
-              <p className="mb-[-14px]">{animateText("Dev")}</p>
-              <p>{animateText("Academy")}</p>
+              <p className="mb-[-12px]">{animateText("Study")}</p>
+              <p>{animateText("Projects")}</p>
             </div>
 
             {/* Dev Academy branch SVG */}
@@ -118,7 +124,7 @@ function SideBar() {
           {/* ------- Current Projects branch -------- */}
           <div>
             <p className="absolute left-[52px] top-[253px] font-primary text-mainFont">
-              <p className="mb-[-14px]">{animateText("Current")}</p>
+              <p className="mb-[-12px]">{animateText("Current")}</p>
               <p>{animateText("Projects")}</p>
             </p>
             {/* Current Projects branch SVG */}
@@ -224,7 +230,7 @@ function SideBar() {
                 </motion.p>
               </Link>
 
-              <Link to="">
+              <Link to="/resume">
                 <motion.p
                   initial="initial"
                   whileHover="whileHover"
@@ -268,14 +274,7 @@ function SideBar() {
           </div>
         </div>
       </div>
-      <motion.div
-        className="ml-auto h-lvh border-r-[1px] border-solid border-black"
-        variants={headerLine}
-        transition={{ duration: 1 }}
-        initial="hidden"
-        animate="visible"
-      ></motion.div>
-    </div>
+    </motion.div>
   );
 }
 

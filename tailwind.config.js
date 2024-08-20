@@ -12,7 +12,8 @@ export default {
         secondary: "var(--secondary-font-family)",
       },
       fontSize: {
-        mainFont: "var(--main-font-size)",
+        mainFont: "var(--main-font-size-sidebar)",
+        contentFontSize: "var(--content-font-size)",
       },
     },
   },

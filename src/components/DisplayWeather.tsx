@@ -47,13 +47,32 @@ function DisplayWeather() {
         variants={delayWeather}
         initial="hidden"
         animate="visible"
-        className="flex flex-row space-x-4 text-[15px] tracking-wide"
+        className="text-[15px] tracking-wide text-blueLink"
       >
-        <p>Weather: {data?.weather.current.condition.text}</p>
-        <p>Temp: {data?.weather.current.temp_c}&deg;C</p>
-        <p>Pressure: {data?.weather.current.pressure_mb} mb</p>
-        <p>UV Index: {data?.weather.current.uv}</p>
-        <p>Sunset: {data?.astronomy.astronomy.astro.sunset}</p>
+        <p className="mr-4 inline-block opacity-65">
+          Current Weather: {data?.weather.current.condition.text}
+        </p>
+        <p className="mr-4 inline-block">
+          Temp: {data?.weather.current.temp_c}&deg;C
+        </p>
+        <p className="mr-4 inline-block">
+          Humidity: {data?.weather.current.humidity}%
+        </p>
+        <p className="mr-4 inline-block">
+          Pressure: {data?.weather.current.pressure_mb} mb
+        </p>
+        <p className="mr-4 inline-block">
+          Wind Speed: {data?.weather.current.wind_kph} kph
+        </p>
+        <p className="mr-4 inline-block">
+          Wind Direction: {data?.weather.current.wind_dir}
+        </p>
+        <p className="mr-4 inline-block">
+          UV Index: {data?.weather.current.uv}{" "}
+        </p>
+        <p className="mr-4 inline-block">
+          Sunset: {data?.astronomy.astronomy.astro.sunset}
+        </p>
         <p></p>
       </motion.div>
     </Marquee>

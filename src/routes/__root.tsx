@@ -8,31 +8,35 @@ import Footer from "../components/Footer";
 const queryClient = new QueryClient();
 
 export const Route = createRootRoute({
-  component: () => (
+  component: RootComponent,
+});
+
+function RootComponent() {
+  return (
     <QueryClientProvider client={queryClient}>
       <meta
         name="description"
         content="I am a full-stack software developer. This is my web presence, built as an example of work and as a platform for my development, and non-development projects."
       />
-      <div className="grid grid-cols-[204px_1fr] bg-mainBgColour">
-        {/* First column */}
-        <nav className="min-h-screen">
-          <SideBar />
-        </nav>
-        {/* Second column */}
-        <div className="flex flex-col">
-          <aside>
-            <Header />
-          </aside>
-          <main className="flex-1">
-            <Outlet />
-          </main>
-          <footer>
-            <Footer />
-          </footer>
+      <div className="max- flex max-h-screen flex-col bg-mainBgColour">
+        <div className="flex flex-1 flex-row">
+          <nav className="w-52 flex-shrink-0">
+            <SideBar />
+          </nav>
+          <div className="flex flex-1 flex-col">
+            <aside>
+              <Header />
+            </aside>
+            <main className="flex-1">
+              <Outlet />
+            </main>
+            <footer>
+              <Footer />
+            </footer>
+          </div>
         </div>
         <TanStackRouterDevtools />
       </div>
     </QueryClientProvider>
-  ),
-});
+  );
+}
