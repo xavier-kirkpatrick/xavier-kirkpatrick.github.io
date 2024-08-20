@@ -4,8 +4,8 @@ export const fadeInText = {
   animate: {
     opacity: 1,
     transition: {
-      duration: 3,
-      delay: 0.5,
+      duration: 2,
+      delay: 0.3,
     },
   },
 };

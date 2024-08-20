@@ -26,43 +26,41 @@ function Home() {
 
   return (
     <motion.div
-      className="flex flex-col items-center justify-center font-primary text-mainFont"
+      className="text-contentFontSize flex min-h-full flex-wrap items-center justify-center space-x-0 md:space-x-6"
       variants={fadeInText}
       initial="initial"
       animate="animate"
     >
-      <div className="mt-[15%] flex flex-shrink-0 flex-wrap items-baseline justify-center space-y-10 lg:space-x-10">
-        <motion.div
-          drag
-          dragConstraints={leftDrag}
-          className="w-[350px] hover:text-blueLink"
-        >
-          <p>
-            Hello, I’m a Software Developer based out of Tāmaki Makaurau,
-            Auckland, New Zealand.
-          </p>
-          <br />
-          <p>
-            It is an exciting time for me as I pivot into the tech industry, and
-            in 2024, I am looking to kickstart my career as a Developer.
-          </p>
-        </motion.div>
-        <motion.div
-          drag
-          dragConstraints={rightDrag}
-          className="w-[350px] hover:text-blueLink"
-        >
-          <p>
-            Here you can find work completed during my time at Dev Academy
-            Aotearoa as well as other external projects.
-          </p>
-          <br />
-          <p>
-            You’ll also find other non-development related interests where I
-            spend my time, personal information and points of contact.
-          </p>
-        </motion.div>
-      </div>
+      <motion.div
+        drag
+        dragConstraints={leftDrag}
+        className="w-[350px] hover:text-blueLink"
+      >
+        <p>
+          Hello, I’m a Software Developer based out of Tāmaki Makaurau,
+          Auckland, New Zealand.
+        </p>
+        <br />
+        <p>
+          It is an exciting time for me as I pivot into the tech industry, and
+          in 2024, I am looking to kickstart my career as a Developer.
+        </p>
+      </motion.div>
+      <motion.div
+        drag
+        dragConstraints={rightDrag}
+        className="w-[350px] hover:text-blueLink"
+      >
+        <p>
+          Here you can find work completed during my study as well as other
+          external projects.
+        </p>
+        <br />
+        <p>
+          You’ll also find other non-development related interests where I spend
+          my time, personal information and points of contact.
+        </p>
+      </motion.div>
     </motion.div>
   );
 }

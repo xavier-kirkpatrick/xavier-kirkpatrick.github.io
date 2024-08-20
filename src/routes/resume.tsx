@@ -12,7 +12,7 @@ export default function Resume() {
       variants={fadeInText}
       initial="initial"
       animate="animate"
-      className="flex min-h-full flex-col items-center justify-center space-y-5"
+      className="text-contentFontSize flex min-h-full flex-col items-center justify-center space-y-5 font-primary"
     >
       <h1>Resume availble on request</h1>
       <p>kirkpatrickxavier@gmail.com</p>

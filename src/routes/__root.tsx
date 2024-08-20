@@ -20,7 +20,7 @@ function RootComponent() {
       />
       <div className="flex max-h-screen flex-col bg-mainBgColour">
         <div className="flex flex-1 flex-row">
-          <nav className="w-52">
+          <nav className="w-52 flex-shrink-0">
             <SideBar />
           </nav>
           <div className="flex flex-1 flex-col">
