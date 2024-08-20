@@ -69,7 +69,7 @@ function Header() {
             <h1>{animateText("Xavier Kirkpatrick")}</h1>
           </div>
           {/* ------- Header bar date, time and weather data section ------- */}
-          <div className="absolute right-[100px] flex items-center space-x-5 font-primary text-[18px] leading-[23px] tracking-wider">
+          <div className="absolute right-[100px] flex items-center space-x-5 font-primary text-[18px] leading-[23px] tracking-wide">
             <p>
               {animateText(
                 dateTime

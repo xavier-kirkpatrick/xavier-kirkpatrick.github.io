@@ -26,7 +26,7 @@ function Home() {
 
   return (
     <motion.div
-      className="text-contentFontSize flex min-h-full flex-wrap items-center justify-center space-x-0 md:space-x-6"
+      className="flex min-h-full flex-wrap items-center justify-center space-x-0 text-contentFontSize md:space-x-6"
       variants={fadeInText}
       initial="initial"
       animate="animate"
@@ -43,7 +43,7 @@ function Home() {
         <br />
         <p>
           It is an exciting time for me as I pivot into the tech industry, and
-          in 2024, I am looking to kickstart my career as a Developer.
+          in 2024, I am looking to progress my career in Development.
         </p>
       </motion.div>
       <motion.div
@@ -52,7 +52,7 @@ function Home() {
         className="w-[350px] hover:text-blueLink"
       >
         <p>
-          Here you can find work completed during my study as well as other
+          Here you can find work completed during my studies as well as other
           external projects.
         </p>
         <br />

@@ -75,7 +75,7 @@ function SideBar() {
           {/* ------- Study Projects branch -------- */}
           <div>
             <div className="absolute left-[52px] top-[100px] font-primary text-mainFont">
-              <p className="mb-[-14px]">{animateText("Study")}</p>
+              <p className="mb-[-12px]">{animateText("Study")}</p>
               <p>{animateText("Projects")}</p>
             </div>
 
@@ -124,7 +124,7 @@ function SideBar() {
           {/* ------- Current Projects branch -------- */}
           <div>
             <p className="absolute left-[52px] top-[253px] font-primary text-mainFont">
-              <p className="mb-[-14px]">{animateText("Current")}</p>
+              <p className="mb-[-12px]">{animateText("Current")}</p>
               <p>{animateText("Projects")}</p>
             </p>
             {/* Current Projects branch SVG */}

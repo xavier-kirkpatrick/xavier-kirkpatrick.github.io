@@ -685,6 +685,10 @@ video {
   margin-right: 1rem;
 }
 
+.mb-\[-12px\] {
+  margin-bottom: -12px;
+}
+
 .inline-block {
   display: inline-block;
 }
@@ -902,6 +906,10 @@ video {
 
 .opacity-65 {
   opacity: 0.65;
+}
+
+.opacity-70 {
+  opacity: 0.7;
 }
 
 .transition {
