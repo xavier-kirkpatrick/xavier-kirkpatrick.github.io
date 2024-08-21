@@ -1,5 +1,5 @@
 import { createRootRoute, Outlet } from "@tanstack/react-router";
-import { TanStackRouterDevtools } from "@tanstack/router-devtools";
+// import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Header from "../components/Header";
 import SideBar from "../components/SideBar";
@@ -35,7 +35,6 @@ function RootComponent() {
             </footer>
           </div>
         </div>
-        {/* <TanStackRouterDevtools /> */}
       </div>
     </QueryClientProvider>
   );
