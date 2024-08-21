@@ -35,7 +35,7 @@ function RootComponent() {
             </footer>
           </div>
         </div>
-        <TanStackRouterDevtools />
+        {/* <TanStackRouterDevtools /> */}
       </div>
     </QueryClientProvider>
   );

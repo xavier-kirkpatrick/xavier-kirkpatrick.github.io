@@ -15,7 +15,6 @@ export async function fetchWeatherData() {
     weather: weatherData,
     astronomy: astronomyData,
   };
-  console.log(weatherApiData);
 
   return weatherApiData;
 }
