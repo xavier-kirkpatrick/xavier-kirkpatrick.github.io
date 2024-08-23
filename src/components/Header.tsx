@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 import DisplayWeather from "./DisplayWeather";
+import DateTime from "./DateTime";
 
 const container = {
   hidden: { opacity: 1 },
@@ -43,17 +43,6 @@ export const animateText = (text: string) => {
 // Header Component ----------------------------------------------------------------------
 
 function Header() {
-  const [dateTime, setDateTime] = useState(new Date());
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setDateTime(new Date());
-    }, 1000);
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
-
   return (
     <motion.div
       variants={headerLine}
@@ -70,20 +59,7 @@ function Header() {
           </div>
           {/* ------- Header bar date, time and weather data section ------- */}
           <div className="absolute right-[100px] flex items-center space-x-5 font-primary text-[18px] leading-[23px] tracking-wide">
-            <p>
-              {animateText(
-                dateTime
-                  .toLocaleTimeString("en-US", {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                    hour12: true,
-                  })
-                  .replace(/:/g, ":"),
-              )}
-            </p>
-            <p>
-              {animateText(dateTime.toLocaleDateString().replace(/\//g, "."))}
-            </p>
+            <DateTime />
           </div>
         </div>
         <p>
