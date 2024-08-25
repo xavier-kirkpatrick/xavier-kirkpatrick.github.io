@@ -20,7 +20,7 @@ function DisplayWeather() {
     refetchInterval: 480000,
   });
 
-  // lets TypeScript know what of type the error is from useQuery.
+  // lets TypeScript know of what type the error is from useQuery.
   type ErrorType = {
     message: string;
   };
