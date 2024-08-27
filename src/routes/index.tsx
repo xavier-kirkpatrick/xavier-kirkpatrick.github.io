@@ -38,7 +38,7 @@ function Home() {
         <motion.div
           variants={sparkleEffect}
           animate="effect"
-          className="text-center text-xs italic text-blueLink"
+          className="text-xs italic text-blueLink"
         >
           Move me
         </motion.div>
@@ -56,13 +56,13 @@ function Home() {
       {/* Right text box */}
       <motion.div
         drag
-        dragConstraints={parentRef}
+        dragConstraints={parentRef ?? undefined}
         className="w-[350px] hover:text-blueLink"
       >
         <motion.div
           variants={sparkleEffect}
           animate="effect"
-          className="text-center text-xs italic text-blueLink"
+          className="text-xs italic text-blueLink"
         >
           Move me
         </motion.div>

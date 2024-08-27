@@ -705,10 +705,6 @@ video {
   display: flex;
 }
 
-.inline-grid {
-  display: inline-grid;
-}
-
 .hidden {
   display: none;
 }
@@ -819,12 +815,16 @@ video {
   margin-bottom: calc(1px * var(--tw-space-y-reverse));
 }
 
-.overflow-auto {
-  overflow: auto;
-}
-
 .overflow-hidden {
   overflow: hidden;
+}
+
+.text-ellipsis {
+  text-overflow: ellipsis;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
 }
 
 .border-b {
@@ -954,11 +954,6 @@ video {
   --main-font-size-sidebar: 14px;
   --content-font-size: 15px;
   --sidebar-link-colour: #444eff;
-}
-
-.hover\:text-black:hover {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .hover\:text-blueLink:hover {

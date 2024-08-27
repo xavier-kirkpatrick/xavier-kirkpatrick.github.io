@@ -34,7 +34,10 @@ function RootComponent() {
               <Header />
             </aside>
             <ParentDragContext.Provider value={parentRef}>
-              <div ref={parentRef} className="flex-1 overflow-hidden">
+              <div
+                ref={parentRef}
+                className="flex-1 overflow-hidden text-ellipsis"
+              >
                 <Outlet />
               </div>
             </ParentDragContext.Provider>
