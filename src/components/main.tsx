@@ -5,6 +5,7 @@ import {
   RouterProvider,
   createRouter,
   NotFoundRoute,
+  createMemoryHistory,
 } from "@tanstack/react-router";
 
 // TanStack says to use notFoundComponent instead of NotFoundRoute but its not listed as an import.
@@ -19,8 +20,17 @@ const notFoundRoute = new NotFoundRoute({
   component: () => "404 Not Found",
 });
 
+// Creates a memory history instance to handle 404 issue when refreshing a route/page that is not the root route, eg '/resume'.
+const memoryHistory = createMemoryHistory({
+  initialEntries: ["/"],
+});
+
 // Create a new router instance
-const router = createRouter({ routeTree, notFoundRoute });
+const router = createRouter({
+  routeTree,
+  notFoundRoute,
+  history: memoryHistory,
+});
 
 // Register the router instance for type safety
 declare module "@tanstack/react-router" {

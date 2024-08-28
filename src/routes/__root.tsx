@@ -24,7 +24,7 @@ function RootComponent() {
         name="description"
         content="I am a full-stack software developer. This is my web presence, built as an example of work and as a platform for my development, and non-development projects."
       />
-      <div className="max- flex max-h-screen flex-col bg-mainBgColour">
+      <div className="flex max-h-screen flex-col bg-mainBgColour">
         <div className="flex flex-1 flex-row">
           <nav className="w-52 flex-shrink-0">
             <SideBar />
@@ -34,10 +34,7 @@ function RootComponent() {
               <Header />
             </aside>
             <ParentDragContext.Provider value={parentRef}>
-              <div
-                ref={parentRef}
-                className="flex-1 overflow-hidden text-ellipsis"
-              >
+              <div ref={parentRef} className="flex-1 overflow-auto">
                 <Outlet />
               </div>
             </ParentDragContext.Provider>

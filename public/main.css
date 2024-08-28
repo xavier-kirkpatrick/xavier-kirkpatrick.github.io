@@ -745,6 +745,10 @@ video {
   flex: 1 1 0%;
 }
 
+.flex-auto {
+  flex: 1 1 auto;
+}
+
 .flex-shrink-0 {
   flex-shrink: 0;
 }
@@ -815,16 +819,26 @@ video {
   margin-bottom: calc(1px * var(--tw-space-y-reverse));
 }
 
+.overflow-auto {
+  overflow: auto;
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
 
-.text-ellipsis {
-  text-overflow: ellipsis;
+.overflow-clip {
+  overflow: clip;
 }
 
-.whitespace-nowrap {
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.text-ellipsis {
+  text-overflow: ellipsis;
 }
 
 .border-b {
