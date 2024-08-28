@@ -17,7 +17,7 @@ function Home() {
   const sparkleEffect: Variants = {
     effect: {
       opacity: [1, 0.5, 1, 0.4, 0.6, 1, 0.4, 1, 0.7],
-      transition: { duration: 4, repeat: Infinity, repeatType: "loop" },
+      transition: { duration: 4, repeat: Infinity, repeatType: "reverse" },
     },
   };
 
@@ -46,7 +46,7 @@ function Home() {
           Welcome, I’m a Software Developer based out of Tāmaki Makaurau,
           Auckland, New Zealand.
         </p>
-
+        <br />
         <p>
           It is an exciting time for me as I pivot into the tech industry, and
           in 2024, I am looking to progress my career in Development.
@@ -70,7 +70,7 @@ function Home() {
           Here you can find work completed during my studies as well as other
           external projects.
         </p>
-
+        <br />
         <p>
           You’ll also find other non-development related interests where I spend
           my time, personal information and points of contact.
