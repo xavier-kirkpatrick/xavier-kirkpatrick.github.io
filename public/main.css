@@ -815,12 +815,12 @@ video {
   margin-bottom: calc(1px * var(--tw-space-y-reverse));
 }
 
-.overflow-hidden {
-  overflow: hidden;
+.overflow-auto {
+  overflow: auto;
 }
 
-.text-ellipsis {
-  text-overflow: ellipsis;
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .border-b {
