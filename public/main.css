@@ -823,10 +823,6 @@ video {
   text-overflow: ellipsis;
 }
 
-.whitespace-nowrap {
-  white-space: nowrap;
-}
-
 .border-b {
   border-bottom-width: 1px;
 }
