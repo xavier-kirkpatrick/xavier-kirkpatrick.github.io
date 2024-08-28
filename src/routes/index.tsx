@@ -36,13 +36,13 @@ function Home() {
         drag
         className="inline-block w-[350px] flex-wrap hover:text-blueLink"
       >
-        <motion.div
+        {/* <motion.div
           variants={sparkleEffect}
           animate="effect"
           className="text-xs italic text-blueLink"
         >
           Move me
-        </motion.div>
+        </motion.div> */}
         <p>
           Welcome, I’m a Software Developer based out of Tāmaki Makaurau,
           Auckland, New Zealand.
@@ -60,13 +60,13 @@ function Home() {
         drag
         className="w-[350px] flex-wrap hover:text-blueLink"
       >
-        <motion.div
+        {/* <motion.div
           variants={sparkleEffect}
           animate="effect"
           className="text-xs italic text-blueLink"
         >
           Move me
-        </motion.div>
+        </motion.div> */}
         <p>
           Here you can find work completed during my studies as well as other
           external projects.
