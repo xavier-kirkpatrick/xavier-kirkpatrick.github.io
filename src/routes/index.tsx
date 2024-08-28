@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion, Variants } from "framer-motion";
 import { fadeInText } from "../motion_variants/fadeInText";
 import { ParentDragContext } from "./__root";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 
 // The Homw component is rendered inside the root route or __route.tsx via the outlet.
 // This is done via the createFileRoute function which in configured to render dynamically below.
@@ -13,6 +13,7 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   const parentRef = useContext(ParentDragContext);
+  const flexRef = useRef<HTMLDivElement>(null);
 
   const sparkleEffect: Variants = {
     effect: {
@@ -31,9 +32,9 @@ function Home() {
     >
       {/* Left text box */}
       <motion.div
+        ref={flexRef}
         drag
-        dragConstraints={parentRef ?? undefined}
-        className="w-[350px] hover:text-blueLink"
+        className="inline-block w-[350px] flex-wrap hover:text-blueLink"
       >
         <motion.div
           variants={sparkleEffect}
@@ -55,9 +56,9 @@ function Home() {
 
       {/* Right text box */}
       <motion.div
+        ref={flexRef}
         drag
-        dragConstraints={parentRef ?? undefined}
-        className="w-[350px] hover:text-blueLink"
+        className="w-[350px] flex-wrap hover:text-blueLink"
       >
         <motion.div
           variants={sparkleEffect}
