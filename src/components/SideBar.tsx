@@ -93,7 +93,8 @@ function SideBar() {
                   variants={linkHoverEffect}
                   className="text-mainFont text-blueLink"
                 >
-                  <p className="mb-[-14px]">{animateText("Foundations")}</p>
+                  <p className="mb-[-12px]">{animateText("Foundations")}</p>
+
                   <p>{animateText("Blog")}</p>
                 </motion.p>
               </Link>

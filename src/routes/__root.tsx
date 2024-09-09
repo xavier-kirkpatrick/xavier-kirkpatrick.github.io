@@ -4,20 +4,14 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Header from "../components/Header";
 import SideBar from "../components/SideBar";
 import Footer from "../components/Footer";
-import { useRef, createContext, MutableRefObject } from "react";
 
 const queryClient = new QueryClient();
-
-export const ParentDragContext =
-  createContext<MutableRefObject<HTMLDivElement | null> | null>(null);
 
 export const Route = createRootRoute({
   component: RootComponent,
 });
 
 function RootComponent() {
-  const parentRef = useRef<HTMLDivElement>(null);
-
   return (
     <QueryClientProvider client={queryClient}>
       <meta
@@ -33,11 +27,11 @@ function RootComponent() {
             <aside>
               <Header />
             </aside>
-            <ParentDragContext.Provider value={parentRef}>
-              <div ref={parentRef} className="flex-1 overflow-auto">
-                <Outlet />
-              </div>
-            </ParentDragContext.Provider>
+
+            <div className="flex-1 overflow-auto">
+              <Outlet />
+            </div>
+
             <footer>
               <Footer />
             </footer>
