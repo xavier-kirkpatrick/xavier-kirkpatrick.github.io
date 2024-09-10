@@ -1,8 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion, Variants } from "framer-motion";
 import { fadeInText } from "../motion_variants/fadeInText";
-import { ParentDragContext } from "./__root";
-import { useContext, useRef } from "react";
+import { useRef } from "react";
 
 // The Homw component is rendered inside the root route or __route.tsx via the outlet.
 // This is done via the createFileRoute function which in configured to render dynamically below.
@@ -12,14 +11,20 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
-  const parentRef = useContext(ParentDragContext);
-  const flexRef = useRef<HTMLDivElement>(null);
+  const dragConstraintsRef = useRef<HTMLDivElement>(null);
 
   const sparkleEffect: Variants = {
     effect: {
       opacity: [1, 0.5, 1, 0.4, 0.6, 1, 0.4, 1, 0.7],
       transition: { duration: 4, repeat: Infinity, repeatType: "reverse" },
     },
+  };
+
+  const leftText = {
+    top: 50,
+    right: 50,
+    bottom: 50,
+    left: -50,
   };
 
   return (
@@ -29,25 +34,25 @@ function Home() {
       variants={fadeInText}
       initial="initial"
       animate="animate"
+      ref={dragConstraintsRef}
     >
       {/* Left text box */}
       <motion.div
-        ref={flexRef}
         drag
-        className="inline-block w-[350px] flex-wrap hover:text-blueLink"
+        dragConstraints={dragConstraintsRef}
+        className="w-[350px] flex-wrap hover:text-blueLink"
       >
-        {/* <motion.div
-          variants={sparkleEffect}
-          animate="effect"
-          className="text-xs italic text-blueLink"
-        >
-          Move me
-        </motion.div> */}
         <p>
           Welcome, I’m a Software Developer based out of Tāmaki Makaurau,
           Auckland, New Zealand.
         </p>
-        <br />
+        <motion.div
+          variants={sparkleEffect}
+          animate="effect"
+          className="text-left text-xs italic text-blueLink"
+        >
+          Move me
+        </motion.div>
         <p>
           It is an exciting time for me as I pivot into the tech industry, and
           in 2024, I am looking to progress my career in Development.
@@ -56,22 +61,21 @@ function Home() {
 
       {/* Right text box */}
       <motion.div
-        ref={flexRef}
         drag
+        dragConstraints={dragConstraintsRef}
         className="w-[350px] flex-wrap hover:text-blueLink"
       >
-        {/* <motion.div
-          variants={sparkleEffect}
-          animate="effect"
-          className="text-xs italic text-blueLink"
-        >
-          Move me
-        </motion.div> */}
         <p>
           Here you can find work completed during my studies as well as other
           external projects.
         </p>
-        <br />
+        <motion.div
+          variants={sparkleEffect}
+          animate="effect"
+          className="text-left text-xs italic text-blueLink"
+        >
+          Move me
+        </motion.div>
         <p>
           You’ll also find other non-development related interests where I spend
           my time, personal information and points of contact.
