@@ -11,20 +11,15 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
-  const dragConstraintsRef = useRef<HTMLDivElement>(null);
+  const constraintsRef = useRef<HTMLDivElement>(null);
+
+  console.log(constraintsRef);
 
   const sparkleEffect: Variants = {
     effect: {
       opacity: [1, 0.5, 1, 0.4, 0.6, 1, 0.4, 1, 0.7],
       transition: { duration: 4, repeat: Infinity, repeatType: "reverse" },
     },
-  };
-
-  const leftText = {
-    top: 50,
-    right: 50,
-    bottom: 50,
-    left: -50,
   };
 
   return (
@@ -34,12 +29,12 @@ function Home() {
       variants={fadeInText}
       initial="initial"
       animate="animate"
-      ref={dragConstraintsRef}
+      ref={constraintsRef}
     >
       {/* Left text box */}
       <motion.div
         drag
-        dragConstraints={dragConstraintsRef}
+        dragConstraints={constraintsRef}
         className="w-[350px] flex-wrap hover:text-blueLink"
       >
         <p>
@@ -62,7 +57,7 @@ function Home() {
       {/* Right text box */}
       <motion.div
         drag
-        dragConstraints={dragConstraintsRef}
+        dragConstraints={constraintsRef}
         className="w-[350px] flex-wrap hover:text-blueLink"
       >
         <p>
