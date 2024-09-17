@@ -29,7 +29,7 @@ function RootComponent() {
             <nav className="hidden w-52 flex-shrink-0 md:block">
               <SideBar />
             </nav>
-            <div className="flex flex-1 flex-col">
+            <div className="flex h-dvh flex-1 flex-col">
               <aside>
                 <Header />
               </aside>
