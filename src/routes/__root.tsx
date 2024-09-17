@@ -22,11 +22,11 @@ function RootComponent() {
       />
       <div className="a">
         {/* className 'a' Hides the hand cursor from showing over links */}
-        {/* CustomCursor component below transforms the cursor to a +, site-wide. */}
+        {/* CustomCursor component below transforms the cursor to a '+' sign, site-wide. */}
         <CustomCursor />
         <div className="flex max-h-screen flex-col bg-mainBgColour">
           <div className="flex flex-1 flex-row">
-            <nav className="w-52 flex-shrink-0">
+            <nav className="hidden w-52 flex-shrink-0 md:block">
               <SideBar />
             </nav>
             <div className="flex flex-1 flex-col">
