@@ -1,6 +1,5 @@
 import { useRef, useEffect } from "react";
 import "../styles/custom_cursor.css";
-// import throttle from "lodash/throttle";
 
 function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
