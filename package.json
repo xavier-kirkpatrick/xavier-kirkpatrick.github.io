@@ -34,7 +34,7 @@
     ]
   },
   "dependencies": {
-    "@million/lint": "^1.0.0-rc.84",
+    "@million/lint": "^0.0.73",
     "@tanstack/react-router": "^1.45.11",
     "@tanstack/router-cli": "^1.30.0",
     "axios": "^1.7.2",
@@ -42,6 +42,7 @@
     "express": "^4.17.2",
     "framer-motion": "^11.2.10",
     "knex": "^2.5.1",
+    "lodash.throttle": "^4.1.1",
     "react-fast-marquee": "^1.6.5",
     "react-icons": "^5.2.0",
     "sqlite3": "^5.1.6",
