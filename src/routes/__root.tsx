@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import SideBar from "../components/SideBar";
 import Footer from "../components/Footer";
 import CustomCursor from "../components/CustomCursor";
-import "../styles/HideCursor.css";
+import "../styles/hide_cursor.css";
 
 const queryClient = new QueryClient();
 
