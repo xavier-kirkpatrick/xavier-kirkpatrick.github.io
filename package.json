@@ -34,7 +34,7 @@
     ]
   },
   "dependencies": {
-    "@million/lint": "^0.0.73",
+    "@million/lint": "^1.0.0-rc.84",
     "@tanstack/react-router": "^1.45.11",
     "@tanstack/router-cli": "^1.30.0",
     "axios": "^1.7.2",
