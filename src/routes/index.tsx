@@ -32,8 +32,8 @@ function Home() {
       {/* Left text box */}
       <motion.div className="w-[350px] flex-wrap text-center hover:text-blueLink">
         <p>
-          Welcome, I’m a Software Developer based out of Tāmaki Makaurau,
-          Auckland, New Zealand.
+          Welcome, I’m a Software Developer from Tāmaki Makaurau, Auckland, New
+          Zealand.
         </p>
         <motion.div
           variants={sparkleEffect}

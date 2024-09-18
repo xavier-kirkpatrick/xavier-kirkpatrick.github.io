@@ -705,16 +705,16 @@ video {
   height: auto;
 }
 
+.h-dvh {
+  height: 100dvh;
+}
+
 .h-full {
   height: 100%;
 }
 
 .h-screen {
   height: 100vh;
-}
-
-.h-dvh {
-  height: 100dvh;
 }
 
 .max-h-screen {
@@ -957,10 +957,6 @@ video {
 }
 
 @media (min-width: 768px) {
-  .md\:invisible {
-    visibility: hidden;
-  }
-
   .md\:block {
     display: block;
   }
