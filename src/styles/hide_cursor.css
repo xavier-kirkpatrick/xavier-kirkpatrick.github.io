@@ -1,0 +1,4 @@
+/* Hides the hand cursor from showing over links */
+a {
+  cursor: none;
+}

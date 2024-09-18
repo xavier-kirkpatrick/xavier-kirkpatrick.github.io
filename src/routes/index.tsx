@@ -13,8 +13,6 @@ export const Route = createFileRoute("/")({
 function Home() {
   const constraintsRef = useRef<HTMLDivElement>(null);
 
-  console.log(constraintsRef);
-
   const sparkleEffect: Variants = {
     effect: {
       opacity: [1, 0.5, 1, 0.4, 0.6, 1, 0.4, 1, 0.7],
@@ -32,21 +30,17 @@ function Home() {
       ref={constraintsRef}
     >
       {/* Left text box */}
-      <motion.div
-        drag
-        dragConstraints={constraintsRef}
-        className="w-[350px] flex-wrap hover:text-blueLink"
-      >
+      <motion.div className="w-[350px] flex-wrap text-center hover:text-blueLink">
         <p>
-          Welcome, I’m a Software Developer based out of Tāmaki Makaurau,
-          Auckland, New Zealand.
+          Welcome, I’m a Software Developer from Tāmaki Makaurau, Auckland, New
+          Zealand.
         </p>
         <motion.div
           variants={sparkleEffect}
           animate="effect"
-          className="text-left text-xs italic text-blueLink"
+          className="text-center text-xs italic text-blueLink"
         >
-          Move me
+          Thank you
         </motion.div>
         <p>
           It is an exciting time for me as I pivot into the tech industry, and
@@ -55,11 +49,7 @@ function Home() {
       </motion.div>
 
       {/* Right text box */}
-      <motion.div
-        drag
-        dragConstraints={constraintsRef}
-        className="w-[350px] flex-wrap hover:text-blueLink"
-      >
+      <motion.div className="w-[350px] flex-wrap text-center hover:text-blueLink">
         <p>
           Here you can find work completed during my studies as well as other
           external projects.
@@ -67,9 +57,9 @@ function Home() {
         <motion.div
           variants={sparkleEffect}
           animate="effect"
-          className="text-left text-xs italic text-blueLink"
+          className="text-center text-xs italic text-blueLink"
         >
-          Move me
+          For visiting
         </motion.div>
         <p>
           You’ll also find other non-development related interests where I spend
