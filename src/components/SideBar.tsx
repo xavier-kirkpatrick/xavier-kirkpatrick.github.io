@@ -1,40 +1,67 @@
 import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
-import { animateText, headerLine } from "./Header";
+import { headerLine } from "../motion_variants/headerLine.ts";
+import { linkHoverEffect } from "../motion_variants/linkHoverEffect.ts";
 import ContentsSVG from "../SVGComponents/ContentsSVG";
 import DevAcademySVG from "../SVGComponents/EDASVG";
 import ProjectsSVG from "../SVGComponents/ProjectsSVG";
 import AudioSVG from "../SVGComponents/AudioSVG";
 import PersonalSVG from "../SVGComponents/PersonalSVG";
-
-// "animateBranches" handles animation and tranisition duration of the menu SVG branches
-const animateBranches = {
-  hidden: { pathLength: 0, opacity: 0 },
-  visible: (dly: number) => {
-    const delay = 0.7 + dly * 0.5;
-    return {
-      pathLength: 1,
-      opacity: 1,
-      transition: {
-        pathLength: { delay, type: "spring", duration: 2, bounce: 0 },
-        opacity: { delay, duration: 0.09 },
-      },
-    };
-  },
-};
-
-// Link text magnifying hover effect
-const linkHoverEffect = {
-  initial: { x: 0 },
-  whileHover: {
-    x: 4,
-    transition: { duration: 0.3 },
-  },
-};
-
+import React from "react";
 // SideBar Component ----------------------------------------------------------------------
 
-function SideBar() {
+const SideBar = React.memo(function SideBar() {
+  // "animateBranches" handles animation and tranisition duration of the menu SVG branches
+  const animateBranches = {
+    hidden: { pathLength: 0, opacity: 0 },
+    visible: (dly: number) => {
+      const delay = 0.7 + dly * 0.5;
+      return {
+        pathLength: 1,
+        opacity: 1,
+        transition: {
+          pathLength: { delay, type: "spring", duration: 2, bounce: 0 },
+          opacity: { delay, duration: 0.09 },
+        },
+      };
+    },
+  };
+  const container = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.5,
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const letter = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
+
+  const animateText = (text: string) => {
+    return (
+      <motion.div
+        className="inline-block overflow-hidden"
+        variants={container}
+        initial="hidden"
+        animate="visible"
+      >
+        {text.split("").map((character, index) => (
+          <motion.div
+            variants={letter}
+            key={`${character}-${index}`}
+            className="inline-block"
+          >
+            {character === " " ? "\u00A0" : character}
+          </motion.div>
+        ))}
+      </motion.div>
+    );
+  };
   return (
     // Sidebar space container div
     <motion.div
@@ -277,6 +304,6 @@ function SideBar() {
       </div>
     </motion.div>
   );
-}
+});
 
 export default SideBar;

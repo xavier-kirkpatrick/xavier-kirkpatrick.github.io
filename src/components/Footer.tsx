@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { headerLine } from "./Header";
+import { headerLine } from "../motion_variants/headerLine.ts";
 
 function Footer() {
   const fadeInText = {
