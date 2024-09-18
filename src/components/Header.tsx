@@ -17,13 +17,13 @@ function Header() {
       {/* flex col conatiner for visual items: title, dateitme and weather */}
       <div className="flex flex-col">
         {/* flex row container for title and datetime items  */}
-        <div className="flex flex-wrap items-baseline justify-between pb-6 pt-10">
+        <div className="flex flex-wrap items-baseline justify-center pb-6 pt-10 sm:justify-between">
           {/* ------- Header bar name title section ------- */}
-          <div className="flex pl-10 font-primary text-[25px] font-normal leading-8 tracking-wider">
+          <div className="flex pl-10 font-primary text-[25px] font-normal leading-8 tracking-wider sm:justify-start">
             <h1>Xavier Kirkpatrick</h1>
           </div>
           {/* ------- Header bar date, time and weather data section ------- */}
-          <div className="pr-10">
+          <div className="hidden pr-10 sm:flex">
             <DateTime />
           </div>
         </div>
