@@ -52,13 +52,13 @@ function Header() {
       className="border-b border-solid border-black"
     >
       <div className="flex flex-col">
-        <div className="flex flex-shrink-0 flex-grow-0 pb-4 pt-10">
+        <div className="flex items-center justify-between pb-6 pt-10">
           {/* ------- Header bar name title section ------- */}
-          <div className="flex pl-[40px] font-primary text-[25px] font-normal leading-8 tracking-wider">
-            <h1>{animateText("Xavier Kirkpatrick")}</h1>
+          <div className="flex pl-10 font-primary text-[25px] font-normal leading-8 tracking-wider">
+            <h1>Xavier Kirkpatrick</h1>
           </div>
           {/* ------- Header bar date, time and weather data section ------- */}
-          <div className="absolute right-[100px] flex items-center space-x-5 font-primary text-[18px] leading-[23px] tracking-wide">
+          <div className="pr-10">
             <DateTime />
           </div>
         </div>
