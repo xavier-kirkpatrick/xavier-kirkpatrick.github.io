@@ -681,6 +681,14 @@ video {
   margin-right: 1rem;
 }
 
+.ml-10 {
+  margin-left: 2.5rem;
+}
+
+.mr-10 {
+  margin-right: 2.5rem;
+}
+
 .block {
   display: block;
 }
@@ -815,10 +823,6 @@ video {
   overflow: hidden;
 }
 
-.border-b {
-  border-bottom-width: 1px;
-}
-
 .border-r-\[1px\] {
   border-right-width: 1px;
 }
@@ -860,6 +864,10 @@ video {
   font-family: var(--primary-font-family);
 }
 
+.font-title {
+  font-family: var(--title-name-font-family);
+}
+
 .text-\[15px\] {
   font-size: 15px;
 }
@@ -890,8 +898,32 @@ video {
   line-height: 1rem;
 }
 
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .font-normal {
   font-weight: 400;
+}
+
+.font-light {
+  font-weight: 300;
 }
 
 .italic {
@@ -941,9 +973,10 @@ video {
 
 :root {
   --main-background-color: #f1f1ec;
+  --title-name-font-family: "Outfit", sans-serif;
   --primary-font-family: "Poppins", sans-serif;
   --secondary-font-family: "Jost", sans-serif;
-  --main-font-size-sidebar: 14px;
+  --main-font-size-sidebar: 15px;
   --content-font-size: 15px;
   --sidebar-link-colour: #444eff;
 }

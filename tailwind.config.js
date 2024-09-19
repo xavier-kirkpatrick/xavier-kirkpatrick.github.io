@@ -8,6 +8,7 @@ export default {
         blueLink: "var(--sidebar-link-colour)",
       },
       fontFamily: {
+        title: "var(--title-name-font-family)",
         primary: "var(--primary-font-family)",
         secondary: "var(--secondary-font-family)",
       },

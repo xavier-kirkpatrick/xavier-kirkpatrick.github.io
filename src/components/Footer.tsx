@@ -15,7 +15,6 @@ function Footer() {
   return (
     <>
       <motion.div
-        className="border-b border-solid border-black"
         variants={headerLine}
         transition={{ duration: 1 }}
         initial="hidden"

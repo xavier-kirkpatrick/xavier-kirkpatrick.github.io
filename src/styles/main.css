@@ -4,13 +4,15 @@
 
 :root {
   --main-background-color: #f1f1ec;
+  --title-name-font-family: "Outfit", sans-serif;
   --primary-font-family: "Poppins", sans-serif;
   --secondary-font-family: "Jost", sans-serif;
-  --main-font-size-sidebar: 14px;
+  --main-font-size-sidebar: 15px;
   --content-font-size: 15px;
   --sidebar-link-colour: #444eff;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
