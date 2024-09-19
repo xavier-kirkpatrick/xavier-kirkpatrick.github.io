@@ -65,7 +65,7 @@ const SideBar = React.memo(function SideBar() {
   return (
     // Sidebar space container div
     <motion.div
-      className="h-screen border-r-[1px] border-solid border-black"
+      className="h-screen border-r-[1px] border-solid border-slate-400"
       variants={headerLine}
       transition={{ duration: 1 }}
       initial="hidden"

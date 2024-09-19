@@ -12,13 +12,14 @@ function Header() {
       transition={{ duration: 1 }}
       initial="hidden"
       animate="visible"
+      className="border-b border-solid border-slate-400"
     >
       {/* flex col conatiner for visual items: title, dateitme and weather */}
       <div className="flex flex-col">
         {/* flex row container for title and datetime items  */}
         <div className="flex flex-wrap items-baseline justify-center pb-6 pt-10 sm:justify-between">
           {/* ------- Header bar name title section ------- */}
-          <div className="font-title ml-10 flex text-3xl font-normal leading-8 tracking-wider">
+          <div className="font-title ml-10 flex text-[27px] font-normal leading-8 tracking-wider">
             <h1>Xavier Kirkpatrick</h1>
           </div>
           {/* ------- Header bar date, time and weather data section ------- */}
