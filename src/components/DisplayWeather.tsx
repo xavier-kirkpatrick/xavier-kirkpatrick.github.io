@@ -2,13 +2,9 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchWeatherData } from "../apis/weatherApi";
 import { motion } from "framer-motion";
 import Marquee from "react-fast-marquee";
+import { delayMarquee } from "../motion_variants/delayMarquee";
 
 function DisplayWeather() {
-  // Delays the render of the weather marquee by 2 seconds.
-  const delayWeather = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 2, delay: 2 } },
-  };
   // Fetch weather + asto data, calls new data at 8 minute intervals.
   const { data, isLoading, error } = useQuery({
     queryKey: ["weather"],
@@ -25,7 +21,7 @@ function DisplayWeather() {
     message: string;
   };
 
-  // Display weather + asto data on front end and handel loading + error states.
+  // Display weather + astro data on front end and handel loading + error states.
   if (isLoading) {
     return <div></div>;
   }
@@ -38,13 +34,13 @@ function DisplayWeather() {
       autoFill={true}
       speed={35}
       pauseOnHover={true}
-      delay={4}
+      delay={0}
       gradient={true}
       gradientWidth={5}
       gradientColor="#f1f1ec"
     >
       <motion.div
-        variants={delayWeather}
+        variants={delayMarquee}
         initial="hidden"
         animate="visible"
         className="text-[15px] tracking-wide text-blueLink"
