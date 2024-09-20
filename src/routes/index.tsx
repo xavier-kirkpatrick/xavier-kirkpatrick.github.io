@@ -19,7 +19,7 @@ function Home() {
     <motion.div className="flex min-h-full flex-col" ref={constraintsRef}>
       {/* flex row #1 */}
       <motion.div
-        className="flex flex-grow flex-wrap items-center justify-center space-x-0 space-y-0 text-contentFontSize md:space-x-10 md:space-y-0"
+        className="flex flex-grow flex-wrap items-center justify-center space-x-0 space-y-0 text-contentFontSize md:space-x-20 md:space-y-0"
         variants={fadeInText}
         initial="initial"
         animate="animate"
