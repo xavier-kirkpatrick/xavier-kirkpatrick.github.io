@@ -1,4 +1,3 @@
-import "../styles/hide_cursor.css";
 import { useState, useEffect } from "react";
 
 function DarkModeButton() {
