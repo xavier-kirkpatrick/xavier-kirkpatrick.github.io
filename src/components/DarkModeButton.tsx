@@ -23,7 +23,7 @@ function DarkModeButton() {
     darkMode === "Dark" ? "text-slate-200" : "text-slate-700";
   return (
     <button
-      className={`${darkOrLightButton} h-7 w-16 border border-slate-700 font-primary text-white ${darkOrLightText} transition-all`}
+      className={`${darkOrLightButton} h-7 w-16 border border-slate-700 font-primary ${darkOrLightText} transition-all`}
       style={{ cursor: "none" }}
       onClick={toggleDarkMode}
     >
