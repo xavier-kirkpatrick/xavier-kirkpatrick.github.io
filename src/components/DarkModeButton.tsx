@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 function DarkModeButton() {
   const [darkMode, setDarkMode] = useState("Dark");
@@ -17,18 +18,29 @@ function DarkModeButton() {
     localStorage.setItem("DarkModeSetting", darkOrLightMode);
   };
 
-  const darkOrLightButton =
-    darkMode === "Dark" ? "bg-slate-700" : "bg-slate-200";
-  const darkOrLightText =
-    darkMode === "Dark" ? "text-slate-200" : "text-slate-700";
+  const darkOrLightButton = darkMode === "Dark" ? "#334155" : "#e3e8f0";
+  const darkOrLightText = darkMode === "Dark" ? "#e3e8f0" : "#334155";
+
   return (
-    <button
-      className={`${darkOrLightButton} h-7 w-16 border border-slate-700 font-primary ${darkOrLightText} transition-all`}
+    <motion.button
+      className="h-7 w-16 border border-slate-700 font-primary"
       style={{ cursor: "none" }}
       onClick={toggleDarkMode}
+      initial={{ backgroundColor: darkOrLightButton }}
+      animate={{ backgroundColor: darkOrLightButton }}
+      transition={{ type: "spring", duration: 0.8, ease: "easeInOut" }}
+      whileTap={{
+        scale: 0.9,
+      }}
     >
-      {darkMode}
-    </button>
+      <motion.p
+        initial={{ color: darkOrLightText }}
+        animate={{ color: darkOrLightText }}
+        transition={{ type: "spring", duration: 0.8, ease: "easeInOut" }}
+      >
+        {darkMode}
+      </motion.p>
+    </motion.button>
   );
 }
 
