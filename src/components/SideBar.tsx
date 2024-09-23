@@ -106,13 +106,13 @@ const SideBar = React.memo(function SideBar() {
             <p>{animateText("Projects")}</p>
           </div>
 
-          {/* Dev Academy branch SVG */}
+          {/* Study Projects branch SVG */}
           <div className="absolute left-[62px] top-[138px] h-auto w-[17px]">
             <DevAcademySVG animateBranches={animateBranches} />
           </div>
-          {/* Dev Academy submenu links */}
+          {/* Study Projects submenu links */}
 
-          <div className="absolute left-[82px] top-[154px] flex flex-col space-y-[0px]">
+          <div className="absolute left-[82px] top-[154px] flex flex-col space-y-[-1px]">
             <Link to="">
               <motion.p
                 initial="initial"
