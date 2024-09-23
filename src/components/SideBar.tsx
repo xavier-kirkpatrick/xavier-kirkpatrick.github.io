@@ -300,7 +300,7 @@ const SideBar = React.memo(function SideBar() {
             </motion.p>
           </div>
         </div>
-        <div className="absolute left-[70px] top-[655px]">
+        <div className="absolute bottom-10 left-[70px]">
           <DarkModeButton />
         </div>
       </div>
