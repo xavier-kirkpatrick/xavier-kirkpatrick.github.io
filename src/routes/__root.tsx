@@ -6,12 +6,20 @@ import SideBar from "../components/SideBar";
 import Footer from "../components/Footer";
 import CustomCursor from "../components/CustomCursor";
 import "../styles/hide_cursor.css";
+import ReactGA from "react-ga4";
 
 const queryClient = new QueryClient();
 
 export const Route = createRootRoute({
   component: RootComponent,
 });
+
+// Initialize Google Analytics
+const trackingId: string = import.meta.env.VITE_REACT_GA_ID;
+ReactGA.initialize(trackingId);
+
+// Function to log page views
+ReactGA.send({ hitType: "pageview", page: window.location.pathname });
 
 function RootComponent() {
   return (

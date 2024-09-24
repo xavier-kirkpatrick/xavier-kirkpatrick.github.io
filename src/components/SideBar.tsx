@@ -9,9 +9,12 @@ import AudioSVG from "../SVGComponents/AudioSVG";
 import PersonalSVG from "../SVGComponents/PersonalSVG";
 import React from "react";
 import DarkModeButton from "./DarkModeButton.tsx";
+import useTrackEvent from "../hooks/useTrackEvent.ts";
 // SideBar Component ----------------------------------------------------------------------
 
 const SideBar = React.memo(function SideBar() {
+  const trackButtonClick = useTrackEvent();
+
   // "animateBranches" handles animation and tranisition duration of the menu SVG branches
   const animateBranches = {
     hidden: { pathLength: 0, opacity: 0 },
@@ -258,7 +261,12 @@ const SideBar = React.memo(function SideBar() {
               </motion.p>
             </Link>
 
-            <Link to="/resume">
+            <Link
+              to="/resume"
+              onClick={() =>
+                trackButtonClick("Button", "Click", "Resume Button")
+              }
+            >
               <motion.p
                 initial="initial"
                 whileHover="whileHover"
