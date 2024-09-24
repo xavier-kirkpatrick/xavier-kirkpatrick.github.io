@@ -18,9 +18,6 @@ export const Route = createRootRoute({
 const trackingId: string = import.meta.env.VITE_REACT_GA_ID;
 ReactGA.initialize(trackingId);
 
-// Function to log page views
-ReactGA.send({ hitType: "pageview", page: window.location.pathname });
-
 function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
