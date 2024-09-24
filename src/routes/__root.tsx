@@ -15,7 +15,7 @@ export const Route = createRootRoute({
 });
 
 // Initialize Google Analytics
-const trackingId = import.meta.env.VITE_GA_TRACKING_ID;
+const trackingId: string = import.meta.env.VITE_REACT_GA_ID;
 ReactGA.initialize(trackingId);
 
 // Function to log page views
