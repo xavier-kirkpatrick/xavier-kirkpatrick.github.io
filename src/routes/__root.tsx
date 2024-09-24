@@ -6,6 +6,9 @@ import SideBar from "../components/SideBar";
 import Footer from "../components/Footer";
 import CustomCursor from "../components/CustomCursor";
 import "../styles/hide_cursor.css";
+import ReactGA from "react-ga4";
+
+ReactGA.initialize("G-WSTRGRWWM4");
 
 const queryClient = new QueryClient();
 
