@@ -8,13 +8,17 @@ import CustomCursor from "../components/CustomCursor";
 import "../styles/hide_cursor.css";
 import ReactGA from "react-ga4";
 
-ReactGA.initialize("G-WSTRGRWWM4");
-
 const queryClient = new QueryClient();
 
 export const Route = createRootRoute({
   component: RootComponent,
 });
+
+// Initialize Google Analytics
+ReactGA.initialize("G-WSTRGRWWM4");
+
+// Function to log page views
+ReactGA.send({ hitType: "pageview", page: window.location.pathname });
 
 function RootComponent() {
   return (
