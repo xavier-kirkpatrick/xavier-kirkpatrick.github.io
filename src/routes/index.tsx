@@ -1,10 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useLocation } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { fadeInText } from "../motion_variants/fadeInText";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
+import ReactGA from "react-ga4";
 import ThankYou from "../components/ThankYou";
 
-// The Homw component is rendered inside the root route or __route.tsx via the outlet.
+// The Home component is rendered inside the root route or __route.tsx via the outlet.
 // This is done via the createFileRoute function which in configured to render dynamically below.
 
 export const Route = createFileRoute("/")({
@@ -13,6 +14,16 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   const constraintsRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    ReactGA.send({
+      hitType: "pageview",
+      page: window.location.pathname,
+      title: "Home page",
+    });
+  }, [location.pathname]);
+
   return (
     // Container div
 
