@@ -21,12 +21,12 @@ function DarkModeButton() {
       onClick={toggleDarkMode}
       initial={{ backgroundColor: darkOrLightButton }}
       animate={{ backgroundColor: darkOrLightButton }}
-      transition={{ type: "spring", duration: 0.8, ease: "easeInOut" }}
+      transition={{ type: "tween", duration: 0.4, ease: "easeInOut" }}
     >
       <motion.p
         initial={{ color: darkOrLightText }}
         animate={{ color: darkOrLightText }}
-        transition={{ type: "spring", duration: 0.8, ease: "easeInOut" }}
+        transition={{ type: "tween", duration: 0.4, ease: "easeInOut" }}
       >
         {darkMode}
       </motion.p>

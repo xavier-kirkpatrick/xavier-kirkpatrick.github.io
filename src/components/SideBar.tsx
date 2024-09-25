@@ -10,6 +10,8 @@ import PersonalSVG from "../SVGComponents/PersonalSVG";
 import React from "react";
 import DarkModeButton from "./DarkModeButton.tsx";
 import useTrackEvent from "../hooks/useTrackEvent";
+import { useDarkMode } from "../hooks/useDarkMode";
+
 // SideBar Component ----------------------------------------------------------------------
 
 const SideBar = React.memo(function SideBar() {
@@ -66,252 +68,265 @@ const SideBar = React.memo(function SideBar() {
       </motion.div>
     );
   };
+
+  const { darkMode } = useDarkMode();
+  const darkOrLightBackGround = darkMode === "Dark" ? "#f1f1ec" : "#334155";
   return (
     // Sidebar space container div
     <motion.div
-      className="flex min-h-screen flex-col border-r border-solid border-slate-400"
-      variants={headerLine}
-      transition={{ duration: 1 }}
-      initial="hidden"
-      animate="visible"
+      initial={{ backgroundColor: darkOrLightBackGround }}
+      animate={{ backgroundColor: darkOrLightBackGround }}
+      transition={{
+        type: "tween",
+        duration: 0.4,
+        ease: "easeInOut",
+      }}
     >
-      <div className="relative flex flex-grow tracking-wide">
-        {/* sidebar menu container div */}
+      <motion.div
+        className="flex min-h-screen flex-col border-r border-solid border-slate-400"
+        variants={headerLine}
+        transition={{ duration: 1 }}
+        initial="hidden"
+        animate="visible"
+      >
+        <div className="relative flex flex-grow tracking-wide">
+          {/* sidebar menu container div */}
 
-        {/* ------- Contents branch ------- */}
-        <div>
-          <p className="absolute left-[21px] top-[34px] font-primary text-mainFont">
-            {animateText("Contents")}
-          </p>
+          {/* ------- Contents branch ------- */}
+          <div>
+            <p className="absolute left-[21px] top-[34px] font-primary text-mainFont">
+              {animateText("Contents")}
+            </p>
 
-          {/* Contents branch SVG */}
-          <div className="absolute left-[31px] top-[54px] h-auto w-[17px]">
-            <ContentsSVG animateBranches={animateBranches} />
-          </div>
-        </div>
-
-        {/* Home link */}
-        <Link to="/">
-          <motion.p
-            initial="initial"
-            whileHover="whileHover"
-            variants={linkHoverEffect}
-            className="absolute left-[52px] top-[70px] text-mainFont text-blueLink hover:underline"
-          >
-            {animateText("Home")}
-          </motion.p>
-        </Link>
-
-        {/* ------- Study Projects branch -------- */}
-        <div>
-          <div className="absolute left-[52px] top-[100px] font-primary text-mainFont">
-            <p className="mb-[-12px]">{animateText("Study")}</p>
-            <p>{animateText("Projects")}</p>
+            {/* Contents branch SVG */}
+            <div className="absolute left-[31px] top-[54px] h-auto w-[17px]">
+              <ContentsSVG animateBranches={animateBranches} />
+            </div>
           </div>
 
-          {/* Study Projects branch SVG */}
-          <div className="absolute left-[62px] top-[138px] h-auto w-[17px]">
-            <DevAcademySVG animateBranches={animateBranches} />
-          </div>
-          {/* Study Projects submenu links */}
-
-          <div className="absolute left-[82px] top-[154px] flex flex-col space-y-[-1px]">
-            <Link to="">
-              <motion.p
-                initial="initial"
-                whileHover="whileHover"
-                variants={linkHoverEffect}
-                className="text-mainFont text-blueLink"
-              >
-                <p className="mb-[-12px]">{animateText("Foundations")}</p>
-
-                <p>{animateText("Blog")}</p>
-              </motion.p>
-            </Link>
-
-            <Link to="">
-              <motion.p
-                initial="initial"
-                whileHover="whileHover"
-                variants={linkHoverEffect}
-                className="text-mainFont text-blueLink"
-              >
-                {animateText("Projects")}
-              </motion.p>
-            </Link>
-
-            <Link to="">
-              <motion.p
-                initial="initial"
-                whileHover="whileHover"
-                variants={linkHoverEffect}
-                className="text-mainFont text-blueLink"
-              >
-                {animateText("Infomation")}
-              </motion.p>
-            </Link>
-          </div>
-        </div>
-        {/* ------- Current Projects branch -------- */}
-        <div>
-          <p className="absolute left-[52px] top-[253px] font-primary text-mainFont">
-            <p className="mb-[-12px]">{animateText("Current")}</p>
-            <p>{animateText("Projects")}</p>
-          </p>
-          {/* Current Projects branch SVG */}
-          <div className="absolute left-[62px] top-[291px] h-auto w-[17px]">
-            <ProjectsSVG animateBranches={animateBranches} />
-          </div>
-          {/* Current Projects submenu links */}
-
-          <div className="absolute left-[82px] top-[307px] flex flex-col space-y-[1px]">
-            <Link to="">
-              <motion.p
-                initial="initial"
-                whileHover="whileHover"
-                variants={linkHoverEffect}
-                className="text-mainFont text-blueLink"
-              >
-                <p>{animateText("Plchldr")}</p>
-              </motion.p>
-            </Link>
-
-            <Link to="">
-              <motion.p
-                initial="initial"
-                whileHover="whileHover"
-                variants={linkHoverEffect}
-                className="text-mainFont text-blueLink"
-              >
-                {animateText("Task Master")}
-              </motion.p>
-            </Link>
-          </div>
-        </div>
-        {/* ------- Audio branch -------- */}
-        <div>
-          <p className="absolute left-[52px] top-[366px] font-primary text-mainFont leading-[15px]">
-            {animateText("Audio")}
-          </p>
-          {/* Audio branch SVG */}
-          <div className="absolute left-[62px] top-[384px] h-auto w-[17px]">
-            <AudioSVG animateBranches={animateBranches} />
-          </div>
-          {/* Audio submenu links */}
-
-          <div className="absolute left-[82px] top-[400px] flex flex-col space-y-[-2px]">
+          {/* Home link */}
+          <Link to="/">
             <motion.p
               initial="initial"
               whileHover="whileHover"
               variants={linkHoverEffect}
-              className="text-mainFont text-blueLink"
+              className="absolute left-[52px] top-[70px] text-mainFont text-blueLink hover:underline"
             >
-              <a
-                href="https://soundcloud.com/cos-sound"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {animateText("COS Sound")}
-              </a>
+              {animateText("Home")}
             </motion.p>
+          </Link>
 
-            <Link to="">
+          {/* ------- Study Projects branch -------- */}
+          <div>
+            <div className="absolute left-[52px] top-[100px] font-primary text-mainFont">
+              <p className="mb-[-12px]">{animateText("Study")}</p>
+              <p>{animateText("Projects")}</p>
+            </div>
+
+            {/* Study Projects branch SVG */}
+            <div className="absolute left-[62px] top-[138px] h-auto w-[17px]">
+              <DevAcademySVG animateBranches={animateBranches} />
+            </div>
+            {/* Study Projects submenu links */}
+
+            <div className="absolute left-[82px] top-[154px] flex flex-col space-y-[-1px]">
+              <Link to="">
+                <motion.p
+                  initial="initial"
+                  whileHover="whileHover"
+                  variants={linkHoverEffect}
+                  className="text-mainFont text-blueLink"
+                >
+                  <p className="mb-[-12px]">{animateText("Foundations")}</p>
+
+                  <p>{animateText("Blog")}</p>
+                </motion.p>
+              </Link>
+
+              <Link to="">
+                <motion.p
+                  initial="initial"
+                  whileHover="whileHover"
+                  variants={linkHoverEffect}
+                  className="text-mainFont text-blueLink"
+                >
+                  {animateText("Projects")}
+                </motion.p>
+              </Link>
+
+              <Link to="">
+                <motion.p
+                  initial="initial"
+                  whileHover="whileHover"
+                  variants={linkHoverEffect}
+                  className="text-mainFont text-blueLink"
+                >
+                  {animateText("Infomation")}
+                </motion.p>
+              </Link>
+            </div>
+          </div>
+          {/* ------- Current Projects branch -------- */}
+          <div>
+            <p className="absolute left-[52px] top-[253px] font-primary text-mainFont">
+              <p className="mb-[-12px]">{animateText("Current")}</p>
+              <p>{animateText("Projects")}</p>
+            </p>
+            {/* Current Projects branch SVG */}
+            <div className="absolute left-[62px] top-[291px] h-auto w-[17px]">
+              <ProjectsSVG animateBranches={animateBranches} />
+            </div>
+            {/* Current Projects submenu links */}
+
+            <div className="absolute left-[82px] top-[307px] flex flex-col space-y-[1px]">
+              <Link to="">
+                <motion.p
+                  initial="initial"
+                  whileHover="whileHover"
+                  variants={linkHoverEffect}
+                  className="text-mainFont text-blueLink"
+                >
+                  <p>{animateText("Plchldr")}</p>
+                </motion.p>
+              </Link>
+
+              <Link to="">
+                <motion.p
+                  initial="initial"
+                  whileHover="whileHover"
+                  variants={linkHoverEffect}
+                  className="text-mainFont text-blueLink"
+                >
+                  {animateText("Task Master")}
+                </motion.p>
+              </Link>
+            </div>
+          </div>
+          {/* ------- Audio branch -------- */}
+          <div>
+            <p className="absolute left-[52px] top-[366px] font-primary text-mainFont leading-[15px]">
+              {animateText("Audio")}
+            </p>
+            {/* Audio branch SVG */}
+            <div className="absolute left-[62px] top-[384px] h-auto w-[17px]">
+              <AudioSVG animateBranches={animateBranches} />
+            </div>
+            {/* Audio submenu links */}
+
+            <div className="absolute left-[82px] top-[400px] flex flex-col space-y-[-2px]">
               <motion.p
                 initial="initial"
                 whileHover="whileHover"
                 variants={linkHoverEffect}
                 className="text-mainFont text-blueLink"
               >
-                {animateText("4::section")}
+                <a
+                  href="https://soundcloud.com/cos-sound"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {animateText("COS Sound")}
+                </a>
               </motion.p>
-            </Link>
 
-            <Link to="">
+              <Link to="">
+                <motion.p
+                  initial="initial"
+                  whileHover="whileHover"
+                  variants={linkHoverEffect}
+                  className="text-mainFont text-blueLink"
+                >
+                  {animateText("4::section")}
+                </motion.p>
+              </Link>
+
+              <Link to="">
+                <motion.p
+                  initial="initial"
+                  whileHover="whileHover"
+                  variants={linkHoverEffect}
+                  className="text-mainFont text-blueLink"
+                >
+                  {animateText("Infomation")}
+                </motion.p>
+              </Link>
+            </div>
+          </div>
+          {/* ------- Personal branch -------- */}
+          <div>
+            <p className="absolute left-[52px] top-[483px] font-primary text-mainFont leading-[15px]">
+              {animateText("Personal")}
+            </p>
+            {/* Personal branch SVG */}
+            <div className="absolute left-[62px] top-[501px] h-auto w-[17px]">
+              <PersonalSVG animateBranches={animateBranches} />
+            </div>
+            {/* Personal submenu links */}
+
+            <div className="absolute left-[82px] top-[517px] flex flex-col space-y-[-2px]">
+              <Link to="">
+                <motion.p
+                  initial="initial"
+                  whileHover="whileHover"
+                  variants={linkHoverEffect}
+                  className="text-mainFont text-blueLink"
+                >
+                  <p>{animateText("Email")}</p>
+                </motion.p>
+              </Link>
+
+              <Link
+                to="/resume"
+                onClick={() =>
+                  trackButtonClick("Button", "Click", "Resume Button")
+                }
+              >
+                <motion.p
+                  initial="initial"
+                  whileHover="whileHover"
+                  variants={linkHoverEffect}
+                  className="text-mainFont text-blueLink"
+                >
+                  {animateText("Resume")}
+                </motion.p>
+              </Link>
+
               <motion.p
                 initial="initial"
                 whileHover="whileHover"
                 variants={linkHoverEffect}
                 className="text-mainFont text-blueLink"
               >
-                {animateText("Infomation")}
+                <a
+                  href="https://www.linkedin.com/in/xavier-kirkpatrick-ab0aba2a3/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {animateText("LinkedIn")}
+                </a>
               </motion.p>
-            </Link>
+
+              <motion.p
+                initial="initial"
+                whileHover="whileHover"
+                variants={linkHoverEffect}
+                className="text-mainFont text-blueLink"
+              >
+                <a
+                  href="https://github.com/xavier-kirkpatrick"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {animateText("GitHub")}
+                </a>
+              </motion.p>
+            </div>
+          </div>
+          <div className="absolute bottom-10 left-[70px]">
+            <DarkModeButton />
           </div>
         </div>
-        {/* ------- Personal branch -------- */}
-        <div>
-          <p className="absolute left-[52px] top-[483px] font-primary text-mainFont leading-[15px]">
-            {animateText("Personal")}
-          </p>
-          {/* Personal branch SVG */}
-          <div className="absolute left-[62px] top-[501px] h-auto w-[17px]">
-            <PersonalSVG animateBranches={animateBranches} />
-          </div>
-          {/* Personal submenu links */}
-
-          <div className="absolute left-[82px] top-[517px] flex flex-col space-y-[-2px]">
-            <Link to="">
-              <motion.p
-                initial="initial"
-                whileHover="whileHover"
-                variants={linkHoverEffect}
-                className="text-mainFont text-blueLink"
-              >
-                <p>{animateText("Email")}</p>
-              </motion.p>
-            </Link>
-
-            <Link
-              to="/resume"
-              onClick={() =>
-                trackButtonClick("Button", "Click", "Resume Button")
-              }
-            >
-              <motion.p
-                initial="initial"
-                whileHover="whileHover"
-                variants={linkHoverEffect}
-                className="text-mainFont text-blueLink"
-              >
-                {animateText("Resume")}
-              </motion.p>
-            </Link>
-
-            <motion.p
-              initial="initial"
-              whileHover="whileHover"
-              variants={linkHoverEffect}
-              className="text-mainFont text-blueLink"
-            >
-              <a
-                href="https://www.linkedin.com/in/xavier-kirkpatrick-ab0aba2a3/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {animateText("LinkedIn")}
-              </a>
-            </motion.p>
-
-            <motion.p
-              initial="initial"
-              whileHover="whileHover"
-              variants={linkHoverEffect}
-              className="text-mainFont text-blueLink"
-            >
-              <a
-                href="https://github.com/xavier-kirkpatrick"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {animateText("GitHub")}
-              </a>
-            </motion.p>
-          </div>
-        </div>
-        <div className="absolute bottom-10 left-[70px]">
-          <DarkModeButton />
-        </div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 });

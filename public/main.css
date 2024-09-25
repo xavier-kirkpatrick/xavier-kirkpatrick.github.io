@@ -885,10 +885,6 @@ video {
   border-color: rgb(51 65 85 / var(--tw-border-opacity));
 }
 
-.bg-mainBgColour {
-  background-color: var(--main-background-color);
-}
-
 .pb-6 {
   padding-bottom: 1.5rem;
 }
