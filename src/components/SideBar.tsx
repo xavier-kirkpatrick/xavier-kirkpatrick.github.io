@@ -9,7 +9,7 @@ import AudioSVG from "../SVGComponents/AudioSVG";
 import PersonalSVG from "../SVGComponents/PersonalSVG";
 import React from "react";
 import DarkModeButton from "./DarkModeButton.tsx";
-import useTrackEvent from "../hooks/useTrackEvent.ts";
+import useTrackEvent from "../hooks/useTrackEvent";
 // SideBar Component ----------------------------------------------------------------------
 
 const SideBar = React.memo(function SideBar() {
@@ -69,7 +69,7 @@ const SideBar = React.memo(function SideBar() {
   return (
     // Sidebar space container div
     <motion.div
-      className="flex min-h-screen flex-col border-r border-solid border-slate-400 bg-mainBgColour"
+      className="flex min-h-screen flex-col border-r border-solid border-slate-400"
       variants={headerLine}
       transition={{ duration: 1 }}
       initial="hidden"

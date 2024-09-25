@@ -18,8 +18,8 @@ function DarkModeButton() {
     localStorage.setItem("DarkModeSetting", darkOrLightMode);
   };
 
-  const darkOrLightButton = darkMode === "Dark" ? "#334155" : "#e3e8f0";
-  const darkOrLightText = darkMode === "Dark" ? "#e3e8f0" : "#334155";
+  const darkOrLightButton = darkMode === "Dark" ? "#334155" : "#f1f1ec";
+  const darkOrLightText = darkMode === "Dark" ? "#f1f1ec" : "#334155";
 
   return (
     <motion.button
@@ -29,9 +29,6 @@ function DarkModeButton() {
       initial={{ backgroundColor: darkOrLightButton }}
       animate={{ backgroundColor: darkOrLightButton }}
       transition={{ type: "spring", duration: 0.8, ease: "easeInOut" }}
-      whileTap={{
-        scale: 0.9,
-      }}
     >
       <motion.p
         initial={{ color: darkOrLightText }}
