@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import CustomCursor from "../components/CustomCursor";
 import "../styles/hide_cursor.css";
 import ReactGA from "react-ga4";
+import DarkModeGlobalProvider from "../components/DarkModeContext";
 
 const queryClient = new QueryClient();
 
@@ -25,31 +26,33 @@ function RootComponent() {
         name="description"
         content="I am a full-stack software developer. This is my web presence, built as an example of work and as a platform for my development, and non-development projects."
       />
-      <div className="a">
-        {/* className 'a' Hides the hand cursor from showing over links */}
-        {/* CustomCursor component below transforms the cursor to a '+' sign, site-wide. */}
-        <CustomCursor />
-        <div className="flex max-h-screen flex-col bg-mainBgColour">
-          <div className="flex flex-1 flex-row">
-            <nav className="hidden w-52 flex-shrink-0 md:block">
-              <SideBar />
-            </nav>
-            <div className="flex h-dvh flex-1 flex-col">
-              <aside>
-                <Header />
-              </aside>
+      <DarkModeGlobalProvider>
+        <div className="a">
+          {/* className 'a' Hides the hand cursor from showing over links */}
+          {/* CustomCursor component below transforms the cursor to a '+' sign, site-wide. */}
+          <CustomCursor />
+          <div className="flex max-h-screen flex-col bg-mainBgColour">
+            <div className="flex flex-1 flex-row">
+              <nav className="hidden w-52 flex-shrink-0 md:block">
+                <SideBar />
+              </nav>
+              <div className="flex h-dvh flex-1 flex-col">
+                <aside>
+                  <Header />
+                </aside>
 
-              <div className="flex-1 overflow-auto">
-                <Outlet />
+                <div className="flex-1 overflow-auto">
+                  <Outlet />
+                </div>
+
+                <footer>
+                  <Footer />
+                </footer>
               </div>
-
-              <footer>
-                <Footer />
-              </footer>
             </div>
           </div>
         </div>
-      </div>
+      </DarkModeGlobalProvider>
     </QueryClientProvider>
   );
 }

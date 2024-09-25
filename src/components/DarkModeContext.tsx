@@ -1,10 +1,18 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 import { DarkModeProps } from "../../models/darkModeProps";
 
-const DarkModeContext = createContext();
+// Create a context to store the dark mode state and share it with other globally
+export const DarkModeContext = createContext<
+  | {
+      darkMode: string;
+      setDarkMode: (mode: string) => void;
+    }
+  | undefined
+>(undefined);
 
 function DarkModeGlobalProvider({ children }: DarkModeProps) {
   const [darkMode, setDarkMode] = useState(() => {
+    // Checks if the user has a cached setting
     const cachedSetting = localStorage.getItem("DarkModeSetting");
     return cachedSetting ? cachedSetting : "Dark";
   });
