@@ -8,6 +8,8 @@ import CustomCursor from "../components/CustomCursor";
 import "../styles/hide_cursor.css";
 import ReactGA from "react-ga4";
 import DarkModeGlobalProvider from "../components/DarkModeContext";
+import { useDarkMode } from "../hooks/useDarkMode";
+import { motion } from "framer-motion";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +22,9 @@ const trackingId: string = import.meta.env.VITE_REACT_GA_ID;
 ReactGA.initialize(trackingId);
 
 function RootComponent() {
+  const { darkMode } = useDarkMode();
+  const darkOrLightBackGround = darkMode === "Dark" ? "#f1f1ec" : "#334155";
+
   return (
     <QueryClientProvider client={queryClient}>
       <meta
@@ -31,7 +36,12 @@ function RootComponent() {
           {/* className 'a' Hides the hand cursor from showing over links */}
           {/* CustomCursor component below transforms the cursor to a '+' sign, site-wide. */}
           <CustomCursor />
-          <div className="flex max-h-screen flex-col bg-mainBgColour">
+          <motion.div
+            className="flex max-h-screen flex-col"
+            initial={{ backgroundColor: darkOrLightBackGround }}
+            animate={{ backgroundColor: darkOrLightBackGround }}
+            transition={{ type: "spring", duration: 0.8, ease: "easeInOut" }}
+          >
             <div className="flex flex-1 flex-row">
               <nav className="hidden w-52 flex-shrink-0 md:block">
                 <SideBar />
@@ -50,7 +60,7 @@ function RootComponent() {
                 </footer>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </DarkModeGlobalProvider>
     </QueryClientProvider>

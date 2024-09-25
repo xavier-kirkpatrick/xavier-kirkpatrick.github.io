@@ -1,15 +1,8 @@
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useDarkMode } from "../hooks/useDarkMode";
 
 function DarkModeButton() {
-  const [darkMode, setDarkMode] = useState("Dark");
-
-  useEffect(() => {
-    const cachedSetting = localStorage.getItem("DarkModeSetting");
-    if (cachedSetting) {
-      setDarkMode(cachedSetting);
-    }
-  }, []);
+  const { darkMode, setDarkMode } = useDarkMode();
 
   const toggleDarkMode = () => {
     const darkOrLightMode = darkMode === "Dark" ? "Light" : "Dark";
