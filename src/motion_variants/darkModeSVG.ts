@@ -4,11 +4,11 @@ import { Variants } from "framer-motion";
 // "#f1f1ec" is the offwhite lightmode and base background colour
 // "#000000" is black for dark mode text
 
-export const getDarkModeTextColour = (darkMode: string): Variants => {
+export const getDarkModeSVGColour = (darkMode: string): Variants => {
   return {
-    initial: { color: darkMode === "Dark" ? "#000000" : "#f1f1ec" },
+    initial: { stroke: darkMode === "Dark" ? "#000000" : "#f1f1ec" },
     animate: {
-      color: darkMode === "Dark" ? "#000000" : "#f1f1ec",
+      stroke: darkMode === "Dark" ? "#000000" : "#f1f1ec",
       transition: { type: "tween", duration: 0.4, ease: "easeInOut" },
     },
   };

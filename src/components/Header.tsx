@@ -18,7 +18,6 @@ function Header() {
     >
       <motion.div
         variants={headerLine}
-        transition={{ duration: 1 }}
         initial="hidden"
         animate="visible"
         className="border-b border-solid border-slate-400"

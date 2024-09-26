@@ -12,6 +12,7 @@ import DarkModeButton from "./DarkModeButton.tsx";
 import useTrackEvent from "../hooks/useTrackEvent";
 import { useDarkMode } from "../hooks/useDarkMode";
 import { getDarkModeGlobalBgColour } from "../motion_variants/darkModeGlobalBg";
+import { getDarkModeTextColour } from "../motion_variants/darkModeText";
 
 // SideBar Component ----------------------------------------------------------------------
 
@@ -81,7 +82,6 @@ const SideBar = React.memo(function SideBar() {
       <motion.div
         className="flex min-h-screen flex-col border-r border-solid border-slate-400"
         variants={headerLine}
-        transition={{ duration: 1 }}
         initial="hidden"
         animate="visible"
       >
@@ -90,9 +90,14 @@ const SideBar = React.memo(function SideBar() {
 
           {/* ------- Contents branch ------- */}
           <div>
-            <p className="absolute left-[21px] top-[34px] font-primary text-mainFont">
+            <motion.p
+              variants={getDarkModeTextColour(darkMode)}
+              initial="initial"
+              animate="animate"
+              className="absolute left-[21px] top-[34px] font-primary text-mainFont"
+            >
               {animateText("Contents")}
-            </p>
+            </motion.p>
 
             {/* Contents branch SVG */}
             <div className="absolute left-[31px] top-[54px] h-auto w-[17px]">
