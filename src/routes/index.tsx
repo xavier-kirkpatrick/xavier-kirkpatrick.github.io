@@ -4,6 +4,8 @@ import { fadeInText } from "../motion_variants/fadeInText";
 import { useRef, useEffect } from "react";
 import ReactGA from "react-ga4";
 import ThankYou from "../components/ThankYou";
+import { useDarkMode } from "../hooks/useDarkMode";
+import { getDarkModeGlobalBgColour } from "../motion_variants/darkModeGlobalBg";
 
 // The Home component is rendered inside the root route or __route.tsx via the outlet.
 // This is done via the createFileRoute function which in configured to render dynamically below.
@@ -15,6 +17,7 @@ export const Route = createFileRoute("/")({
 function Home() {
   const constraintsRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
+  const { darkMode } = useDarkMode();
 
   useEffect(() => {
     ReactGA.send({
@@ -27,7 +30,13 @@ function Home() {
   return (
     // Container div
 
-    <motion.div className="flex min-h-full flex-col" ref={constraintsRef}>
+    <motion.div
+      variants={getDarkModeGlobalBgColour(darkMode)}
+      initial="initial"
+      animate="animate"
+      className="flex min-h-full flex-col"
+      ref={constraintsRef}
+    >
       {/* flex row #1 */}
       <motion.div
         className="flex flex-grow flex-wrap items-center justify-center space-x-0 space-y-0 text-contentFontSize md:space-x-20 md:space-y-0"

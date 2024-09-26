@@ -7,11 +7,11 @@ export const DarkModeContext = createContext<{
   setDarkMode: (mode: string) => void;
 }>({ darkMode: "Dark", setDarkMode: () => {} });
 
-function DarkModeGlobalProvider({ children }: DarkModeProps) {
+function DarkModeGlobalProvider({ children }: Readonly<DarkModeProps>) {
   const [darkMode, setDarkMode] = useState(() => {
     // Checks if the user has a cached setting
     const cachedSetting = localStorage.getItem("DarkModeSetting");
-    return cachedSetting ? cachedSetting : "Dark";
+    return cachedSetting ?? "Dark";
   });
 
   return (

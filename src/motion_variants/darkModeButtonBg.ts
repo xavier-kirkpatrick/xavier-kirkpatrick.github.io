@@ -1,6 +1,9 @@
 import { Variants } from "framer-motion";
 
-export const getDarkModeButtonVariants = (darkMode: string): Variants => {
+// "#334155" is the slate-700 colour for dark mode button background
+// "#f1f1ec" is the offwhite lightmode and base background colour
+
+export const getDarkModeButtonBg = (darkMode: string): Variants => {
   return {
     initial: { backgroundColor: darkMode === "Dark" ? "#334155" : "#f1f1ec" },
     animate: {
