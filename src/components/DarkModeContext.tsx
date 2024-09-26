@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useMemo } from "react";
 import { DarkModeProps } from "../../models/darkModeProps";
 
 // Create a context to store the dark mode state and share it with other globally
@@ -14,8 +14,11 @@ function DarkModeGlobalProvider({ children }: Readonly<DarkModeProps>) {
     return cachedSetting ?? "Dark";
   });
 
+  // !Need to look deeper into how useMemo is working here and why it's needed!
+  const darkModeVales = useMemo(() => ({ darkMode, setDarkMode }), [darkMode]);
+
   return (
-    <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
+    <DarkModeContext.Provider value={darkModeVales}>
       {children}
     </DarkModeContext.Provider>
   );
