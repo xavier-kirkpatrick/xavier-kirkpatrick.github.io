@@ -15,6 +15,7 @@ function Footer() {
       },
     },
   };
+  const copyRightText = darkMode === "Dark" ? "#1e293b" : "#cbd5e1";
 
   return (
     <motion.div
@@ -28,14 +29,20 @@ function Footer() {
         initial="hidden"
         animate="visible"
       ></motion.div>
-      <motion.p
+      <motion.div
         variants={fadeInText}
         initial="initial"
         animate="animate"
         className="text-center font-primary text-sm text-slate-800"
       >
-        &copy; 2024 Xavier Kirkpatrick
-      </motion.p>
+        <motion.p
+          initial={{ color: copyRightText }}
+          animate={{ color: copyRightText }}
+          transition={{ type: "tween", duration: 0.4, ease: "easeInOut" }}
+        >
+          &copy; 2024 Xavier Kirkpatrick
+        </motion.p>
+      </motion.div>
     </motion.div>
   );
 }
