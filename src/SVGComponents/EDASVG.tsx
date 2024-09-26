@@ -1,10 +1,14 @@
 import { motion, Variants } from "framer-motion";
+import { getDarkModeSVGColour } from "../motion_variants/darkModeSVG";
+import { useDarkMode } from "../hooks/useDarkMode";
 
 function DevAcademySVG({
   animateBranches,
 }: {
   readonly animateBranches: Variants;
 }) {
+  const { darkMode } = useDarkMode();
+
   return (
     <motion.svg
       // width={17}
@@ -12,16 +16,20 @@ function DevAcademySVG({
       viewBox="0 0 17 104"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      initial="hidden"
-      animate="visible"
     >
-      <motion.g id="Dev Academy Branch">
+      <motion.g
+        variants={getDarkModeSVGColour(darkMode)}
+        initial="initial"
+        animate="animate"
+        id="Dev Academy Branch"
+      >
         <motion.line
           id="Line 6"
           x1={0.5}
           x2={0.5}
           y2={30}
-          stroke="black"
+          initial="hidden"
+          animate="visible"
           variants={animateBranches}
           custom={0.1}
         />
@@ -31,7 +39,8 @@ function DevAcademySVG({
           y1={29.5}
           x2={15.9938}
           y2={29.5}
-          stroke="black"
+          initial="hidden"
+          animate="visible"
           variants={animateBranches}
           custom={0.5}
         />
@@ -41,7 +50,8 @@ function DevAcademySVG({
           y1={21}
           x2={16.5}
           y2={104}
-          stroke="black"
+          initial="hidden"
+          animate="visible"
           variants={animateBranches}
           custom={1.0}
         />

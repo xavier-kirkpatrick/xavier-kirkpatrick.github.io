@@ -18,6 +18,7 @@ import { getDarkModeTextColour } from "../motion_variants/darkModeText";
 
 const SideBar = React.memo(function SideBar() {
   const trackButtonClick = useTrackEvent();
+  const { darkMode } = useDarkMode();
 
   // "animateBranches" handles animation and tranisition duration of the menu SVG branches
   const animateBranches = {
@@ -71,7 +72,6 @@ const SideBar = React.memo(function SideBar() {
     );
   };
 
-  const { darkMode } = useDarkMode();
   return (
     // Sidebar space container div
     <motion.div
@@ -119,10 +119,15 @@ const SideBar = React.memo(function SideBar() {
 
           {/* ------- Study Projects branch -------- */}
           <div>
-            <div className="absolute left-[52px] top-[100px] font-primary text-mainFont">
+            <motion.div
+              variants={getDarkModeTextColour(darkMode)}
+              initial="initial"
+              animate="animate"
+              className="absolute left-[52px] top-[100px] font-primary text-mainFont"
+            >
               <p className="mb-[-12px]">{animateText("Study")}</p>
               <p>{animateText("Projects")}</p>
-            </div>
+            </motion.div>
 
             {/* Study Projects branch SVG */}
             <div className="absolute left-[62px] top-[138px] h-auto w-[17px]">
@@ -169,10 +174,15 @@ const SideBar = React.memo(function SideBar() {
           </div>
           {/* ------- Current Projects branch -------- */}
           <div>
-            <p className="absolute left-[52px] top-[253px] font-primary text-mainFont">
+            <motion.div
+              variants={getDarkModeTextColour(darkMode)}
+              initial="initial"
+              animate="animate"
+              className="absolute left-[52px] top-[253px] font-primary text-mainFont"
+            >
               <p className="mb-[-12px]">{animateText("Current")}</p>
               <p>{animateText("Projects")}</p>
-            </p>
+            </motion.div>
             {/* Current Projects branch SVG */}
             <div className="absolute left-[62px] top-[291px] h-auto w-[17px]">
               <ProjectsSVG animateBranches={animateBranches} />
@@ -205,9 +215,14 @@ const SideBar = React.memo(function SideBar() {
           </div>
           {/* ------- Audio branch -------- */}
           <div>
-            <p className="absolute left-[52px] top-[366px] font-primary text-mainFont leading-[15px]">
+            <motion.p
+              variants={getDarkModeTextColour(darkMode)}
+              initial="initial"
+              animate="animate"
+              className="absolute left-[52px] top-[366px] font-primary text-mainFont leading-[15px]"
+            >
               {animateText("Audio")}
-            </p>
+            </motion.p>
             {/* Audio branch SVG */}
             <div className="absolute left-[62px] top-[384px] h-auto w-[17px]">
               <AudioSVG animateBranches={animateBranches} />
@@ -255,9 +270,14 @@ const SideBar = React.memo(function SideBar() {
           </div>
           {/* ------- Personal branch -------- */}
           <div>
-            <p className="absolute left-[52px] top-[483px] font-primary text-mainFont leading-[15px]">
+            <motion.p
+              variants={getDarkModeTextColour(darkMode)}
+              initial="initial"
+              animate="animate"
+              className="absolute left-[52px] top-[483px] font-primary text-mainFont leading-[15px]"
+            >
               {animateText("Personal")}
-            </p>
+            </motion.p>
             {/* Personal branch SVG */}
             <div className="absolute left-[62px] top-[501px] h-auto w-[17px]">
               <PersonalSVG animateBranches={animateBranches} />
