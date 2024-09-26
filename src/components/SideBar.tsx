@@ -11,6 +11,7 @@ import React from "react";
 import DarkModeButton from "./DarkModeButton.tsx";
 import useTrackEvent from "../hooks/useTrackEvent";
 import { useDarkMode } from "../hooks/useDarkMode";
+import { getDarkModeGlobalBgColour } from "../motion_variants/darkModeGlobalBg";
 
 // SideBar Component ----------------------------------------------------------------------
 
@@ -70,17 +71,12 @@ const SideBar = React.memo(function SideBar() {
   };
 
   const { darkMode } = useDarkMode();
-  const darkOrLightBackGround = darkMode === "Dark" ? "#f1f1ec" : "#334155";
   return (
     // Sidebar space container div
     <motion.div
-      initial={{ backgroundColor: darkOrLightBackGround }}
-      animate={{ backgroundColor: darkOrLightBackGround }}
-      transition={{
-        type: "tween",
-        duration: 0.4,
-        ease: "easeInOut",
-      }}
+      variants={getDarkModeGlobalBgColour(darkMode)}
+      initial="initial"
+      animate="animate"
     >
       <motion.div
         className="flex min-h-screen flex-col border-r border-solid border-slate-400"

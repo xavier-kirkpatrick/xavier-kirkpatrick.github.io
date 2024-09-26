@@ -6,6 +6,7 @@ import ReactGA from "react-ga4";
 import ThankYou from "../components/ThankYou";
 import { useDarkMode } from "../hooks/useDarkMode";
 import { getDarkModeGlobalBgColour } from "../motion_variants/darkModeGlobalBg";
+import { getDarkModeTextColour } from "../motion_variants/darkModeText";
 
 // The Home component is rendered inside the root route or __route.tsx via the outlet.
 // This is done via the createFileRoute function which in configured to render dynamically below.
@@ -45,7 +46,12 @@ function Home() {
         animate="animate"
       >
         {/* Left text box */}
-        <motion.div className="w-[350px] border-solid border-slate-400 text-center hover:border hover:text-blueLink">
+        <motion.div
+          variants={getDarkModeTextColour(darkMode)}
+          initial="initial"
+          animate="animate"
+          className="w-[350px] border-solid border-slate-400 text-center hover:border hover:text-blueLink"
+        >
           <p>
             Welcome, I’m a Software Developer from Tāmaki Makaurau, Auckland,
             New Zealand.
@@ -58,7 +64,12 @@ function Home() {
         </motion.div>
 
         {/* Right text box */}
-        <motion.div className="w-[350px] border-solid border-slate-400 text-center hover:border hover:text-blueLink">
+        <motion.div
+          variants={getDarkModeTextColour(darkMode)}
+          initial="initial"
+          animate="animate"
+          className="w-[350px] border-solid border-slate-400 text-center hover:border hover:text-blueLink"
+        >
           <p>
             Here you can find work completed during my studies as well as other
             external projects.
